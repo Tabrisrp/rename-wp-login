@@ -3,8 +3,8 @@
 Contributors: tabrisrp, WPServeur
 Tags: rename, login, wp-login, wp-login.php, custom login url
 Requires at least: 4.1
-Tested up to: 4.4
-Stable tag: 1.1.5
+Tested up to: 4.8
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,20 +12,20 @@ Change wp-login.php to anything you want.
 
 == Description ==
 
-*WPS Hide Login* is a very light plugin that lets you easily and safely change the url of the login form to anything you want. It doesn’t literally rename or change files in core, nor does it add rewrite rules. It simply intercepts page requests and works on any WordPress website. The wp-admin directory and wp-login.php page become inaccessible, so you should bookmark or remember the url. Deactivating this plugin brings your site back exactly to the state it was before.
+*WPS Hide Login* is a very light plugin that lets you easily and safely change the url of the login form page to anything you want. It doesn’t literally rename or change files in core, nor does it add rewrite rules. It simply intercepts page requests and works on any WordPress website. The wp-admin directory and wp-login.php page become inaccessible, so you should bookmark or remember the url. Deactivating this plugin brings your site back exactly to the state it was before.
 
 = Compatibility =
 
 Requires WordPress 4.1 or higher. All login related things such as the registration form, lost password form, login widget and expired sessions just keep working.
 
-It’s also compatible with any plugin that hooks in the login form, including
+It’s also compatible with any plugin that hooks in the login form, including:
 
 * BuddyPress,
 * bbPress,
 * Limit Login Attempts,
 * and User Switching.
 
-Obviously it doesn’t work with plugins that *hardcoded* wp-login.php.
+Obviously it doesn’t work with plugins or themes that *hardcoded* wp-login.php.
 
 Works with multisite, but not tested with subdomains. Activating it for a network allows you to set a networkwide default. Individual sites can still rename their login page to something else.
 
@@ -63,6 +63,19 @@ This case can come from plugins modifying your .htaccess files to add or change 
 First step is to check your .htaccess file and compare it to a regular one, to see if the problem comes from it.
 
 == Changelog ==
+
+= 1.2.1 =
+* Enhancement: Prevent access to the login page by using the URL encoded version of wp-login.php
+
+= 1.2 =
+* Enhancement: Prevent redirection to login URL when accessing /wp-admin/customize.php directly
+* Enhancement: Redirect to admin URL when already logged-in and accessing login URL without the action query string
+
+= 1.1.7 =
+* Fix: change fake 404 on wp-admin when not logged-in to a 403 forbidden to prevent fatal errors with various themes & plugins
+
+= 1.1.6 =
+* Fix: bug with Yoast SEO causing a Fatal Error and blank screen when loading /wp-admin/ without being logged-in
 
 = 1.1.5 =
 * Fix: Stop displaying the new login url notice everywhere when settings are updated (thanks @ kmelia on GitHub)
