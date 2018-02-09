@@ -1,0 +1,133 @@
+# Translation of Plugins - WPS Hide Login - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - WPS Hide Login - Stable (latest release) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - WPS Hide Login - Stable (latest release)\n"
+"POT-Creation-Date: 2018-02-08 09:49+0100\n"
+"PO-Revision-Date: 2018-02-08 11:18+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Poedit 1.8.12\n"
+
+#: wps-hide-login.php:194
+msgid "Please upgrade to the latest version of WordPress to activate"
+msgstr "Veuillez mettre à jour WordPress dans sa dernière version pour activer"
+
+#. Plugin Name of the plugin/theme
+#: wps-hide-login.php:194 wps-hide-login.php:216
+msgid "WPS Hide Login"
+msgstr "WPS Hide Login"
+
+#: wps-hide-login.php:200
+msgid ""
+"WPS Hide Login could not be activated because you already have Rename wp-"
+"login.php active. Please uninstall rename wp-login.php to use WPS Hide Login"
+msgstr ""
+"WPS Hide Login n’a pas pu être activé car vous avez déjà Rename wp-login.php "
+"activé. Veuillez désinstaller Rename wp-login.php pour pouvoir utiliser WPS "
+"Hide Login."
+
+#: wps-hide-login.php:217
+msgid ""
+"This option allows you to set a networkwide default, which can be overridden "
+"by individual sites. Simply go to to the site’s permalink settings to change "
+"the url."
+msgstr ""
+"Cette option vous permet de définir un réglage par défaut pour le réseau, "
+"qui peut ensuite être remplacé pour chaque site individuellement. Allez "
+"simplement dans les réglages des permaliens du site pour modifier l’URL."
+
+#: wps-hide-login.php:218 wps-hide-login.php:305
+#, php-format
+msgid ""
+"Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
+"This plugin is kindly brought to you by <a href=\"%2$s\" target=\"_blank"
+"\">WPServeur</a>"
+msgstr ""
+"Besoin d’aide ? Essayez le <a href=\"%1$s\" target=\"_blank\">forum de "
+"support</a>. Cette extension vous est gentiment proposée par <a href=\"%2$s"
+"\" target=\"_blank\">WPServeur</a>"
+
+#: wps-hide-login.php:221
+msgid "Networkwide default"
+msgstr "Réglage par défaut du réseau"
+
+#: wps-hide-login.php:255
+msgid "Login url"
+msgstr "URL de connexion"
+
+#: wps-hide-login.php:305
+msgid "WordPress specialized hosting"
+msgstr "Hébergement spécialisé WordPress"
+
+#: wps-hide-login.php:306
+msgid "Discover our other plugins:"
+msgstr "Découvrez notre dernière création, le plugin"
+
+#: wps-hide-login.php:307
+msgid "WPS Bidouille"
+msgstr "WPS Bidouille"
+
+#: wps-hide-login.php:315
+#, php-format
+msgid ""
+"To set a networkwide default, go to <a href=\"%s\">Network Settings</a>."
+msgstr ""
+"Pour définir un réglage par défaut pour le réseau, allez aux <a href=\"%s"
+"\">réglages du réseaux</a>."
+
+#: wps-hide-login.php:348
+#, php-format
+msgid ""
+"Your login page is now here: <strong><a href=\"%1$s\">%2$s</a></strong>. "
+"Bookmark this page!"
+msgstr ""
+"Votre page de connexion est maintenant ici : <strong><a href=\"%1$s\">%2$s</"
+"a></strong>. Mettez-la en favori !"
+
+#: wps-hide-login.php:359 wps-hide-login.php:363
+msgid "Settings"
+msgstr "Réglages"
+
+#: wps-hide-login.php:379
+msgid "This feature is not enabled."
+msgstr "Cette fonctionnalité n’est pas activée."
+
+#: wps-hide-login.php:410 wps-hide-login.php:419
+msgid "This has been disabled"
+msgstr "Cela a été désactivé"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/Tabrisrp/wps-hide-login"
+msgstr "https://github.com/Tabrisrp/wps-hide-login"
+
+#. Description of the plugin/theme
+msgid ""
+"Protect your website by changing the login URL and preventing access to wp-"
+"login.php page and wp-admin directory while not logged-in"
+msgstr ""
+"Protégez votre site Web en changeant l’URL de connexion et en empêchant "
+"l’accès à la page wp-login.php et au répertoire wp-admin aux personnes non-"
+"connectées. "
+
+#. Author of the plugin/theme
+msgid "Remy Perona for WPServeur"
+msgstr "Remy Perona de WPServeur"
+
+#. Author URI of the plugin/theme
+msgid "http://profiles.wordpress.org/tabrisrp/"
+msgstr "http://profiles.wordpress.org/tabrisrp/"
+
+#~ msgid ""
+#~ "Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
+#~ "This plugin is kindly brought to you by <a href=\"%2$s\" target=\"_blank"
+#~ "\">WPServeur</a>."
+#~ msgstr ""
+#~ "Besoin d’aide ? Essayez le <a href=\"%1$s\" target=\"_blank\">forum de "
+#~ "support</a>. Cette extension vous est gentiment proposée par <a href="
+#~ "\"%2$s\" target=\"_blank\">WPServeur</a>."

@@ -168,6 +168,7 @@ if ( defined( 'ABSPATH' ) && ! class_exists( 'WPS_Hide_Login' ) ) {
 			add_filter( 'site_option_welcome_email', array( $this, 'welcome_email' ) );
 
 			remove_action( 'template_redirect', 'wp_redirect_admin_locations', 1000 );
+			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
 		}
 
@@ -214,7 +215,7 @@ if ( defined( 'ABSPATH' ) && ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			$out .= '<h3>' . __( 'WPS Hide Login', 'wps-hide-login' ) . '</h3>';
 			$out .= '<p>' . __( 'This option allows you to set a networkwide default, which can be overridden by individual sites. Simply go to to the site’s permalink settings to change the url.', 'wps-hide-login' ) . '</p>';
-			$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>.', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net' ) . '</p>';
+			$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . '</p>';
 			$out .= '<table class="form-table">';
 			$out .= '<tr valign="top">';
 			$out .= '<th scope="row"><label for="whl_page">' . __( 'Networkwide default', 'wps-hide-login' ) . '</label></th>';
@@ -290,7 +291,20 @@ if ( defined( 'ABSPATH' ) && ! class_exists( 'WPS_Hide_Login' ) ) {
 			if ( ! is_multisite()
 			     || is_super_admin() ) {
 
-				$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>.', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net' ) . '</p>';
+				$details_url = add_query_arg(
+					array(
+						'tab'       => 'plugin-information',
+						'plugin'    => 'wps-bidouille',
+						'TB_iframe' => true,
+						'width'     => 722,
+						'height'    => 949,
+					),
+					admin_url( 'plugin-install.php' )
+				);
+
+				$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wps-hide-login' ) . ')';
+				$out .= '<br>' . __( 'Discover our other plugins:', 'wps-hide-login' ) . ' ';
+				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wps-hide-login' ) . '</a><p>';
 
 			}
 
@@ -522,6 +536,23 @@ if ( defined( 'ABSPATH' ) && ! class_exists( 'WPS_Hide_Login' ) ) {
 
 		public function whl_load_textdomain() {
 			load_plugin_textdomain( 'wps-hide-login', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		}
+
+		/**
+		 * Load scripts
+		 */
+		public function admin_enqueue_scripts() {
+			$screen = get_current_screen();
+
+			if ( 'options-general' != $screen->id ) {
+				return false;
+			}
+
+			wp_enqueue_style( 'plugin-install' );
+
+			wp_enqueue_script( 'plugin-install' );
+			wp_enqueue_script( 'updates' );
+			add_thickbox();
 		}
 
 	}
