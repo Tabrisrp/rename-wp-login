@@ -1,0 +1,114 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WPS Hide Login\n"
+"POT-Creation-Date: 2018-02-08 09:49+0100\n"
+"PO-Revision-Date: 2018-02-08 09:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wps-hide-login.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: wps-hide-login.php:194
+msgid "Please upgrade to the latest version of WordPress to activate"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: wps-hide-login.php:194 wps-hide-login.php:216
+msgid "WPS Hide Login"
+msgstr ""
+
+#: wps-hide-login.php:200
+msgid ""
+"WPS Hide Login could not be activated because you already have Rename wp-"
+"login.php active. Please uninstall rename wp-login.php to use WPS Hide Login"
+msgstr ""
+
+#: wps-hide-login.php:217
+msgid ""
+"This option allows you to set a networkwide default, which can be overridden "
+"by individual sites. Simply go to to the site’s permalink settings to change "
+"the url."
+msgstr ""
+
+#: wps-hide-login.php:218 wps-hide-login.php:305
+#, php-format
+msgid ""
+"Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
+"This plugin is kindly brought to you by <a href=\"%2$s\" target=\"_blank"
+"\">WPServeur</a>"
+msgstr ""
+
+#: wps-hide-login.php:221
+msgid "Networkwide default"
+msgstr ""
+
+#: wps-hide-login.php:255
+msgid "Login url"
+msgstr ""
+
+#: wps-hide-login.php:305
+msgid "WordPress specialized hosting"
+msgstr ""
+
+#: wps-hide-login.php:306
+msgid "Discover our other plugins:"
+msgstr ""
+
+#: wps-hide-login.php:307
+msgid "WPS Bidouille"
+msgstr ""
+
+#: wps-hide-login.php:315
+#, php-format
+msgid ""
+"To set a networkwide default, go to <a href=\"%s\">Network Settings</a>."
+msgstr ""
+
+#: wps-hide-login.php:348
+#, php-format
+msgid ""
+"Your login page is now here: <strong><a href=\"%1$s\">%2$s</a></strong>. "
+"Bookmark this page!"
+msgstr ""
+
+#: wps-hide-login.php:359 wps-hide-login.php:363
+msgid "Settings"
+msgstr ""
+
+#: wps-hide-login.php:379
+msgid "This feature is not enabled."
+msgstr ""
+
+#: wps-hide-login.php:410 wps-hide-login.php:419
+msgid "This has been disabled"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/Tabrisrp/wps-hide-login"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Protect your website by changing the login URL and preventing access to wp-"
+"login.php page and wp-admin directory while not logged-in"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Remy Perona for WPServeur"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://profiles.wordpress.org/tabrisrp/"
+msgstr ""
