@@ -1,10 +1,8 @@
 <?php
 /*
 Plugin Name: WPS Hide Login
-Plugin URI: https://github.com/Tabrisrp/wps-hide-login
 Description: Protect your website by changing the login URL and preventing access to wp-login.php page and wp-admin directory while not logged-in
-Author: Remy Perona for WPServeur
-Author URI: http://profiles.wordpress.org/tabrisrp/
+Author: WPServeur, NicolasKulka, tabrisrp
 Version: 1.2.3
 Requires at least: 4.1
 Tested up to: 4.9
