@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WPS Hide Login - Stable (latest release)\n"
-"POT-Creation-Date: 2018-02-08 09:49+0100\n"
-"PO-Revision-Date: 2018-02-08 11:18+0100\n"
+"POT-Creation-Date: 2018-02-12 11:09+0100\n"
+"PO-Revision-Date: 2018-02-12 11:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -14,16 +14,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 1.8.12\n"
 
-#: wps-hide-login.php:194
+#: classes/plugin.php:164
 msgid "Please upgrade to the latest version of WordPress to activate"
 msgstr "Veuillez mettre à jour WordPress dans sa dernière version pour activer"
 
 #. Plugin Name of the plugin/theme
-#: wps-hide-login.php:194 wps-hide-login.php:216
+#: classes/plugin.php:164 classes/plugin.php:184 classes/plugin.php:528
+#: classes/plugin.php:531
 msgid "WPS Hide Login"
 msgstr "WPS Hide Login"
 
-#: wps-hide-login.php:200
+#: classes/plugin.php:170
 msgid ""
 "WPS Hide Login could not be activated because you already have Rename wp-"
 "login.php active. Please uninstall rename wp-login.php to use WPS Hide Login"
@@ -32,7 +33,7 @@ msgstr ""
 "activé. Veuillez désinstaller Rename wp-login.php pour pouvoir utiliser WPS "
 "Hide Login."
 
-#: wps-hide-login.php:217
+#: classes/plugin.php:185
 msgid ""
 "This option allows you to set a networkwide default, which can be overridden "
 "by individual sites. Simply go to to the site’s permalink settings to change "
@@ -42,7 +43,7 @@ msgstr ""
 "qui peut ensuite être remplacé pour chaque site individuellement. Allez "
 "simplement dans les réglages des permaliens du site pour modifier l’URL."
 
-#: wps-hide-login.php:218 wps-hide-login.php:305
+#: classes/plugin.php:186 classes/plugin.php:274
 #, php-format
 msgid ""
 "Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
@@ -53,27 +54,27 @@ msgstr ""
 "support</a>. Cette extension vous est gentiment proposée par <a href=\"%2$s"
 "\" target=\"_blank\">WPServeur</a>"
 
-#: wps-hide-login.php:221
+#: classes/plugin.php:189
 msgid "Networkwide default"
 msgstr "Réglage par défaut du réseau"
 
-#: wps-hide-login.php:255
+#: classes/plugin.php:223
 msgid "Login url"
 msgstr "URL de connexion"
 
-#: wps-hide-login.php:305
+#: classes/plugin.php:274
 msgid "WordPress specialized hosting"
 msgstr "Hébergement spécialisé WordPress"
 
-#: wps-hide-login.php:306
+#: classes/plugin.php:275
 msgid "Discover our other plugins:"
 msgstr "Découvrez notre dernière création, le plugin"
 
-#: wps-hide-login.php:307
+#: classes/plugin.php:276
 msgid "WPS Bidouille"
 msgstr "WPS Bidouille"
 
-#: wps-hide-login.php:315
+#: classes/plugin.php:285
 #, php-format
 msgid ""
 "To set a networkwide default, go to <a href=\"%s\">Network Settings</a>."
@@ -81,7 +82,16 @@ msgstr ""
 "Pour définir un réglage par défaut pour le réseau, allez aux <a href=\"%s"
 "\">réglages du réseaux</a>."
 
-#: wps-hide-login.php:348
+#: classes/plugin.php:305
+msgid ""
+"Protect your website by changing the login URL and preventing access to the "
+"wp-login.php page and the wp-admin directory to non-connected people."
+msgstr ""
+"Protégez votre site Web en changeant l’URL de connexion et en empêchant "
+"l’accès à la page wp-login.php et au répertoire wp-admin aux personnes non-"
+"connectées."
+
+#: classes/plugin.php:320
 #, php-format
 msgid ""
 "Your login page is now here: <strong><a href=\"%1$s\">%2$s</a></strong>. "
@@ -90,15 +100,15 @@ msgstr ""
 "Votre page de connexion est maintenant ici : <strong><a href=\"%1$s\">%2$s</"
 "a></strong>. Mettez-la en favori !"
 
-#: wps-hide-login.php:359 wps-hide-login.php:363
+#: classes/plugin.php:331 classes/plugin.php:335
 msgid "Settings"
 msgstr "Réglages"
 
-#: wps-hide-login.php:379
+#: classes/plugin.php:351
 msgid "This feature is not enabled."
 msgstr "Cette fonctionnalité n’est pas activée."
 
-#: wps-hide-login.php:410 wps-hide-login.php:419
+#: classes/plugin.php:382
 msgid "This has been disabled"
 msgstr "Cela a été désactivé"
 
