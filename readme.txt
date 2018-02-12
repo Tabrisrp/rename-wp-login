@@ -12,9 +12,36 @@ Change wp-login.php to anything you want.
 
 == Description ==
 
+= Français =
+
+*WPS Hide Login* est un plugin très léger qui vous permet de changer facilement et en toute sécurité l'url de la page de formulaire de connexion. Il ne renomme pas littéralement ou ne modifie pas les fichiers dans le noyau, ni n'ajoute des règles de réécriture. Il intercepte simplement les demandes de pages et fonctionne sur n'importe quel site WordPress. Le répertoire wp-admin et la page wp-login.php deviennent inaccessibles, vous devez donc ajouter un signet ou vous souvenir de l'URL. Désactiver ce plugin ramène votre site exactement à l'état dans lequel il était auparavant.
+
+= English =
+
 *WPS Hide Login* is a very light plugin that lets you easily and safely change the url of the login form page to anything you want. It doesn’t literally rename or change files in core, nor does it add rewrite rules. It simply intercepts page requests and works on any WordPress website. The wp-admin directory and wp-login.php page become inaccessible, so you should bookmark or remember the url. Deactivating this plugin brings your site back exactly to the state it was before.
 
 = Compatibility =
+
+= Français =
+
+Nécessite WordPress 4.1 ou supérieur. Toutes les choses liées à la connexion telles que le formulaire d'inscription, le formulaire de mot de passe perdu, le widget de connexion et les sessions expirées continuent de fonctionner.
+
+Il est également compatible avec tout plugin qui se connecte au formulaire de connexion, notamment:
+
+* BuddyPress,
+* bbPress,
+* Limit Login Attempts,
+* and User Switching.
+
+Évidemment, cela ne fonctionne pas avec les plugins ou les thèmes *hardcoded* wp-login.php.
+
+Fonctionne en multisite, mais pas testé avec des sous-domaines. L'activer pour un réseau vous permet de définir une valeur par défaut pour l'ensemble du réseau. Les sites individuels peuvent toujours renommer leur page de connexion pour autre chose.
+
+Si vous utilisez un **plugin de mise en cache de pages** autre que WP Rocket, vous devez ajouter le slug de la nouvelle URL de connexion à la liste des pages à ne pas mettre en cache. WP Rocket est déjà entièrement compatible avec le plugin.
+
+Pour W3 Total Cache et WP Super Cache, ce plugin vous donnera un message avec un lien vers le champ que vous devriez mettre à jour.
+
+= English =
 
 Requires WordPress 4.1 or higher. All login related things such as the registration form, lost password form, login widget and expired sessions just keep working.
 
@@ -39,17 +66,43 @@ https://github.com/tabrisrp/wps-hide-login
 
 == Installation ==
 
+= Français =
+
+1. Aller dans Extensions › Ajouter.
+2. Rechercher *WPS Hide Login*.
+3. Recherchez ce plugin, téléchargez-le et activez-le.
+4. La page vous redirigera vers les paramètres. Changez votre URL de connexion.
+5. Vous pouvez changer cette option quand vous le souhaitez, il vous suffit de retourner dans Paramètres > WPS Hide Login.
+
+= English =
+
 1. Go to Plugins › Add New.
 2. Search for *WPS Hide Login*.
 3. Look for this plugin, download and activate it.
 4. The page will redirect you to the settings. Change your login url there.
-5. You can change this option any time you want, just go back to Settings › General › WPS Hide Login.
+5. You can change this option any time you want, just go back to Settings › WPS Hide Login.
 
 == Screenshots ==
 1. Setting on single site installation
 2. Setting for network wide
 
 == Frequently Asked Questions ==
+
+= Français =
+
+= J'ai oublié mon identifiant de connexion ! =
+
+Allez dans votre base de données MySQL et recherchez la valeur de 'whl_page' dans la table des options, ou supprimez le dossier 'wps-hide-login' de votre dossier 'plugins', connectez-vous via wp-login.php et réinstallez le plugin .
+
+Sur une installation multisite, l'option 'whl_page' sera dans la table de sitemeta, si l'option n'existe pas dans la table des options.
+
+= Je suis bloqué ! =
+
+Ce cas peut provenir de plugins modifiant vos fichiers .htaccess pour ajouter ou modifier des règles, ou d'une ancienne configuration de WordPress MU non mise à jour depuis l'ajout de Multisite.
+
+La première étape consiste à vérifier votre fichier .htaccess et à le comparer à un fichier .htaccess normal, pour voir si le problème provient de ce fichier.
+
+= English =
 
 = I forgot my login url!  =
 
