@@ -8,7 +8,6 @@ Author URI: http://profiles.wordpress.org/tabrisrp/
 Version: 1.2.3
 Requires at least: 4.1
 Tested up to: 4.9
-Text Domain: wps-hide-login
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
