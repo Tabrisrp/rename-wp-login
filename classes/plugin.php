@@ -270,9 +270,11 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 					admin_url( 'plugin-install.php' )
 				);
 
-				$out .= '<div id="whl_settings"><p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wps-hide-login' ) . ')';
+				$out .= '<div id="whl_settings">';
+				$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wps-hide-login' ) . ')';
 				$out .= '<br>' . __( 'Discover our other plugins:', 'wps-hide-login' ) . ' ';
-				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wps-hide-login' ) . '</a><p></div>';
+				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wps-hide-login' ) . '</a><p>';
+				$out .= '</div>';
 
 			}
 
