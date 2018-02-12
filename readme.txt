@@ -88,8 +88,6 @@ https://github.com/tabrisrp/wps-hide-login
 
 == Frequently Asked Questions ==
 
-= Français =
-
 = J'ai oublié mon identifiant de connexion ! =
 
 Allez dans votre base de données MySQL et recherchez la valeur de 'whl_page' dans la table des options, ou supprimez le dossier 'wps-hide-login' de votre dossier 'plugins', connectez-vous via wp-login.php et réinstallez le plugin .
@@ -102,8 +100,6 @@ Ce cas peut provenir de plugins modifiant vos fichiers .htaccess pour ajouter ou
 
 La première étape consiste à vérifier votre fichier .htaccess et à le comparer à un fichier .htaccess normal, pour voir si le problème provient de ce fichier.
 
-= English =
-
 = I forgot my login url!  =
 
 Either go to your MySQL database and look for the value of `whl_page` in the options table, or remove the `wps-hide-login` folder from your `plugins` folder, log in through wp-login.php and reinstall the plugin.
@@ -111,6 +107,7 @@ Either go to your MySQL database and look for the value of `whl_page` in the opt
 On a multisite install the `whl_page` option will be in the sitemeta table, if there is no such option in the options table.
 
 = I'm locked out! =
+
 This case can come from plugins modifying your .htaccess files to add or change rules, or from an old WordPress MU configuration not updated since Multisite was added.
 
 First step is to check your .htaccess file and compare it to a regular one, to see if the problem comes from it.
