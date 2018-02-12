@@ -161,13 +161,13 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 		public function admin_notices_incompatible() {
 
-			echo '<div class="error notice is-dismissible"><p>' . __( 'Please upgrade to the latest version of WordPress to activate', 'wps-hide-login' ) . ' <strong>' . __( 'WPS Hide Login', 'wps-hide-login' ) . '</strong>.</p></div>';
+			echo '<div class="error notice is-dismissible"><p>' . __( 'Please upgrade to the latest version of WordPress to activate', 'wpserveur-hide-login' ) . ' <strong>' . __( 'WPS Hide Login', 'wpserveur-hide-login' ) . '</strong>.</p></div>';
 
 		}
 
 		public function admin_notices_plugin_conflict() {
 
-			echo '<div class="error notice is-dismissible"><p>' . __( 'WPS Hide Login could not be activated because you already have Rename wp-login.php active. Please uninstall rename wp-login.php to use WPS Hide Login', 'wps-hide-login' ) . '</p></div>';
+			echo '<div class="error notice is-dismissible"><p>' . __( 'WPS Hide Login could not be activated because you already have Rename wp-login.php active. Please uninstall rename wp-login.php to use WPS Hide Login', 'wpserveur-hide-login' ) . '</p></div>';
 
 		}
 
@@ -181,12 +181,12 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			$out = '';
 
-			$out .= '<h3>' . __( 'WPS Hide Login', 'wps-hide-login' ) . '</h3>';
-			$out .= '<p>' . __( 'This option allows you to set a networkwide default, which can be overridden by individual sites. Simply go to to the site’s permalink settings to change the url.', 'wps-hide-login' ) . '</p>';
-			$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . '</p>';
+			$out .= '<h3>' . __( 'WPS Hide Login', 'wpserveur-hide-login' ) . '</h3>';
+			$out .= '<p>' . __( 'This option allows you to set a networkwide default, which can be overridden by individual sites. Simply go to to the site’s permalink settings to change the url.', 'wpserveur-hide-login' ) . '</p>';
+			$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wpserveur-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . '</p>';
 			$out .= '<table class="form-table">';
 			$out .= '<tr valign="top">';
-			$out .= '<th scope="row"><label for="whl_page">' . __( 'Networkwide default', 'wps-hide-login' ) . '</label></th>';
+			$out .= '<th scope="row"><label for="whl_page">' . __( 'Networkwide default', 'wpserveur-hide-login' ) . '</label></th>';
 			$out .= '<td><input id="whl_page" type="text" name="whl_page" value="' . esc_attr( get_site_option( 'whl_page', 'login' ) ) . '"></td>';
 			$out .= '</tr>';
 			$out .= '</table>';
@@ -220,7 +220,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			add_settings_field(
 				'whl_page',
-				'<label for="whl_page">' . __( 'Login url', 'wps-hide-login' ) . '</label>',
+				'<label for="whl_page">' . __( 'Login url', 'wpserveur-hide-login' ) . '</label>',
 				array( $this, 'whl_page_input' ),
 				'general',
 				'wps-hide-login-section'
@@ -271,9 +271,9 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				);
 
 				$out .= '<div id="whl_settings">';
-				$out .= sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wps-hide-login' ) . ')';
-				$out .= '<br>' . __( 'Discover our other plugins:', 'wps-hide-login' ) . ' ';
-				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wps-hide-login' ) . '</a>';
+				$out .= sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wpserveur-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wpserveur-hide-login' ) . ')';
+				$out .= '<br>' . __( 'Discover our other plugins:', 'wpserveur-hide-login' ) . ' ';
+				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wpserveur-hide-login' ) . '</a>';
 				$out .= '</div>';
 
 			}
@@ -282,7 +282,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			     && is_super_admin()
 			     && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) ) {
 
-				$out .= '<p>' . sprintf( __( 'To set a networkwide default, go to <a href="%s">Network Settings</a>.', 'wps-hide-login' ), network_admin_url( 'settings.php#whl_settings' ) ) . '</p>';
+				$out .= '<p>' . sprintf( __( 'To set a networkwide default, go to <a href="%s">Network Settings</a>.', 'wpserveur-hide-login' ), network_admin_url( 'settings.php#whl_settings' ) ) . '</p>';
 
 			}
 
@@ -302,7 +302,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			}
 
-			echo '<p class="description">' . __( 'Protect your website by changing the login URL and preventing access to the wp-login.php page and the wp-admin directory to non-connected people.', 'wps-hide-login' ) . '</p>';
+			echo '<p class="description">' . __( 'Protect your website by changing the login URL and preventing access to the wp-login.php page and the wp-admin directory to non-connected people.', 'wpserveur-hide-login' ) . '</p>';
 
 		}
 
@@ -317,7 +317,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			     && isset( $_GET['settings-updated'] )
 			     && ! isset( $_GET['page'] ) ) {
 
-				echo '<div class="updated notice is-dismissible"><p>' . sprintf( __( 'Your login page is now here: <strong><a href="%1$s">%2$s</a></strong>. Bookmark this page!', 'wps-hide-login' ), $this->new_login_url(), $this->new_login_url() ) . '</p></div>';
+				echo '<div class="updated notice is-dismissible"><p>' . sprintf( __( 'Your login page is now here: <strong><a href="%1$s">%2$s</a></strong>. Bookmark this page!', 'wpserveur-hide-login' ), $this->new_login_url(), $this->new_login_url() ) . '</p></div>';
 
 			}
 
@@ -328,11 +328,11 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			if ( is_network_admin()
 			     && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) ) {
 
-				array_unshift( $links, '<a href="' . network_admin_url( 'settings.php#whl_settings' ) . '">' . __( 'Settings', 'wps-hide-login' ) . '</a>' );
+				array_unshift( $links, '<a href="' . network_admin_url( 'settings.php#whl_settings' ) . '">' . __( 'Settings', 'wpserveur-hide-login' ) . '</a>' );
 
 			} elseif ( ! is_network_admin() ) {
 
-				array_unshift( $links, '<a href="' . admin_url( 'options-general.php#whl_settings' ) . '">' . __( 'Settings', 'wps-hide-login' ) . '</a>' );
+				array_unshift( $links, '<a href="' . admin_url( 'options-general.php#whl_settings' ) . '">' . __( 'Settings', 'wpserveur-hide-login' ) . '</a>' );
 
 			}
 
@@ -348,7 +348,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			     && ( strpos( $_SERVER['REQUEST_URI'], 'wp-signup' ) !== false
 			          || strpos( $_SERVER['REQUEST_URI'], 'wp-activate' ) ) !== false ) {
 
-				wp_die( __( 'This feature is not enabled.', 'wps-hide-login' ) );
+				wp_die( __( 'This feature is not enabled.', 'wpserveur-hide-login' ) );
 
 			}
 
@@ -379,7 +379,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			global $pagenow;
 
 			if ( ! is_user_logged_in() && 'customize.php' === $pagenow ) {
-				wp_die( __( 'This has been disabled', 'wps-hide-login' ), 403 );
+				wp_die( __( 'This has been disabled', 'wpserveur-hide-login' ), 403 );
 			}
 		}
 
