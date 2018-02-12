@@ -75,6 +75,9 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			remove_action( 'template_redirect', 'wp_redirect_admin_locations', 1000 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+
+			add_action('admin_menu', array( $this, 'wps_hide_login_menu_page' ) );
+			add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
 		}
 
 		private function use_trailing_slashes() {
@@ -233,11 +236,11 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				     && is_super_admin()
 				     && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) ) {
 
-					$redirect = network_admin_url( 'settings.php#whl-page-input' );
+					$redirect = network_admin_url( 'settings.php#whl_settings' );
 
 				} else {
 
-					$redirect = admin_url( 'options-general.php#whl-page-input' );
+					$redirect = admin_url( 'options-general.php#whl_settings' );
 
 				}
 
@@ -267,9 +270,9 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 					admin_url( 'plugin-install.php' )
 				);
 
-				$out .= '<p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wps-hide-login' ) . ')';
+				$out .= '<div id="whl_settings"><p>' . sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wps-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wps-hide-login' ) . ')';
 				$out .= '<br>' . __( 'Discover our other plugins:', 'wps-hide-login' ) . ' ';
-				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wps-hide-login' ) . '</a><p>';
+				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wps-hide-login' ) . '</a><p></div>';
 
 			}
 
@@ -277,7 +280,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			     && is_super_admin()
 			     && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) ) {
 
-				$out .= '<p>' . sprintf( __( 'To set a networkwide default, go to <a href="%s">Network Settings</a>.', 'wps-hide-login' ), network_admin_url( 'settings.php#whl-page-input' ) ) . '</p>';
+				$out .= '<p>' . sprintf( __( 'To set a networkwide default, go to <a href="%s">Network Settings</a>.', 'wps-hide-login' ), network_admin_url( 'settings.php#whl_settings' ) ) . '</p>';
 
 			}
 
@@ -321,11 +324,11 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			if ( is_network_admin()
 			     && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) ) {
 
-				array_unshift( $links, '<a href="' . network_admin_url( 'settings.php#whl-page-input' ) . '">' . __( 'Settings', 'wps-hide-login' ) . '</a>' );
+				array_unshift( $links, '<a href="' . network_admin_url( 'settings.php#whl_settings' ) . '">' . __( 'Settings', 'wps-hide-login' ) . '</a>' );
 
 			} elseif ( ! is_network_admin() ) {
 
-				array_unshift( $links, '<a href="' . admin_url( 'options-general.php#whl-page-input' ) . '">' . __( 'Settings', 'wps-hide-login' ) . '</a>' );
+				array_unshift( $links, '<a href="' . admin_url( 'options-general.php#whl_settings' ) . '">' . __( 'Settings', 'wps-hide-login' ) . '</a>' );
 
 			}
 
@@ -515,6 +518,21 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			wp_enqueue_script( 'plugin-install' );
 			wp_enqueue_script( 'updates' );
 			add_thickbox();
+		}
+
+		public function wps_hide_login_menu_page() {
+			$title = __( 'WPS Hide Login' );
+
+			add_options_page($title, $title, 'manage_options', 'whl_settings', function () {
+				_e( 'WPS Hide Login' );
+			});
+		}
+
+		public function whl_template_redirect() {
+			if ( ! empty( $_GET ) && isset( $_GET['page'] ) && 'whl_settings' === $_GET['page'] ) {
+				wp_redirect( admin_url( 'options-general.php#whl_settings' ) );
+				exit();
+			}
 		}
 
 	}
