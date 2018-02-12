@@ -49,5 +49,5 @@ add_action( 'plugins_loaded', 'plugins_loaded_wps_hide_login_plugin' );
 function plugins_loaded_wps_hide_login_plugin() {
 	new WPS_Hide_Login;
 
-	load_plugin_textdomain( 'wps-hide-login', false, dirname( WPS_HIDE_LOGIN_BASENAME ) . '/languages' );
+	load_plugin_textdomain( 'wpserveur-hide-login', false, dirname( WPS_HIDE_LOGIN_BASENAME ) . '/languages' );
 }
