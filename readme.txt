@@ -66,6 +66,8 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 
 = 1.2.3 =
 * Fix: change 403 to 404 error on wp-admin
+* Fix: activate plugin
+* Enhancement: Third party wpserveur
 
 = 1.2.2 =
 * Enhancement: Compatibility 4.9.x
