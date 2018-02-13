@@ -94,6 +94,11 @@ Allez dans votre base de données MySQL et recherchez la valeur de 'whl_page' da
 
 Sur une installation multisite, l'option 'whl_page' sera dans la table de sitemeta, si l'option n'existe pas dans la table des options.
 
+= URL d'inscription et de mot de passe oublié =
+
+Il vous faut donner l'url. exemple : /login?action=register ou /login?action=lostpassword
+Mais il n'y pas de redirection via le plugin, de l'url par défaut de WordPress (/wp-login.php?action=register ou /wp-login.php?action=lostpassword) sinon tout le monde pourrait connaître l'url d'administration de votre site.
+
 = Je suis bloqué ! =
 
 Ce cas peut provenir de plugins modifiant vos fichiers .htaccess pour ajouter ou modifier des règles, ou d'une ancienne configuration de WordPress MU non mise à jour depuis l'ajout de Multisite.
@@ -105,6 +110,11 @@ La première étape consiste à vérifier votre fichier .htaccess et à le compa
 Either go to your MySQL database and look for the value of `whl_page` in the options table, or remove the `wps-hide-login` folder from your `plugins` folder, log in through wp-login.php and reinstall the plugin.
 
 On a multisite install the `whl_page` option will be in the sitemeta table, if there is no such option in the options table.
+
+= Registration and lost password URL =
+
+You have to give the url. example: /login?action=register or /login?action=lostpassword
+But there is no redirection via the plugin, the default URL of WordPress (/wp-login.php?action=register or /wp-login.php?action=lostpassword) otherwise everyone could know the url of administration of your site.
 
 = I'm locked out! =
 
