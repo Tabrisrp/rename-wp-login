@@ -4,7 +4,7 @@ Contributors: tabrisrp, WPServeur, nicolaskulka
 Tags: rename, login, wp-login, wp-login.php, custom login url
 Requires at least: 4.1
 Tested up to: 4.9
-Stable tag: 1.2.4
+Stable tag: 1.2.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -124,8 +124,9 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 
 == Changelog ==
 
-= 1.2.4 =
+= 1.2.3.1 =
 * Enhancement: Add translations cs_CZ, da_DK, es_ES, it_IT, ru_RU
+* Fix: Parse error classes/plugin.php l.530
 
 = 1.2.3 =
 * Fix: change 403 to 404 error on wp-admin
