@@ -527,9 +527,14 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 		public function wps_hide_login_menu_page() {
 			$title = __( 'WPS Hide Login' );
 
-			add_options_page($title, $title, 'manage_options', 'whl_settings', function () {
-				_e( 'WPS Hide Login' );
-			});
+			add_options_page($title, $title, 'manage_options', 'whl_settings', array(
+				$this,
+				'settings_page'
+			) );
+		}
+
+		public function settings_page() {
+			_e( 'WPS Hide Login' );
 		}
 
 		public function whl_template_redirect() {
