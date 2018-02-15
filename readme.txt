@@ -125,6 +125,7 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 == Changelog ==
 
 = 1.2.4 =
+* Remove: Third party wpserveur
 
 = 1.2.3.1 =
 * Enhancement: Add translations cs_CZ, da_DK, es_ES, it_IT, ru_RU

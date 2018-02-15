@@ -32,10 +32,6 @@ function wps_hide_login_load_files( $dir, $files, $prefix = '' ) {
 	}
 }
 
-wps_hide_login_load_files( WPS_HIDE_LOGIN_DIR . '3rd-party/', array(
-	'3rd-party'
-) );
-
 // Plugin client classes
 wps_hide_login_load_files( WPS_HIDE_LOGIN_DIR . 'classes/', array(
 	'plugin',
