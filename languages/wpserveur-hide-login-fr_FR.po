@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WPS Hide Login - Stable (latest release)\n"
 "POT-Creation-Date: 2018-02-12 11:09+0100\n"
-"PO-Revision-Date: 2018-02-12 11:09+0100\n"
+"PO-Revision-Date: 2018-03-02 16:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -68,7 +68,7 @@ msgstr "Hébergement spécialisé WordPress"
 
 #: classes/plugin.php:275
 msgid "Discover our other plugins:"
-msgstr "Découvrez notre dernière création, le plugin"
+msgstr "Découvrez nos autres plugin :"
 
 #: classes/plugin.php:276
 msgid "WPS Bidouille"
