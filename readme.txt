@@ -4,7 +4,7 @@ Contributors: tabrisrp, WPServeur, nicolaskulka
 Tags: rename, login, wp-login, wp-login.php, custom login url
 Requires at least: 4.1
 Tested up to: 4.9
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,12 @@ Découvrez également nos autres extensions gratuites :
 = English =
 
 *WPS Hide Login* is a very light plugin that lets you easily and safely change the url of the login form page to anything you want. It doesn’t literally rename or change files in core, nor does it add rewrite rules. It simply intercepts page requests and works on any WordPress website. The wp-admin directory and wp-login.php page become inaccessible, so you should bookmark or remember the url. Deactivating this plugin brings your site back exactly to the state it was before.
+
+This plugin is kindly proposed by <a href="https://www.wpserveur.net/">WPServeur</a> the specialized WordPress web host.
+
+Discover also our other free extensions:
+- <a href="https://en.wordpress.org/plugins/wps-limit-login/">WPS Limit Login</a> to block brute force attacks.
+- <a href="https://en.wordpress.org/plugins/wps-bidouille/">WPS Bidouille</a> to optimize your WordPress and get more info.
 
 = Compatibility =
 
@@ -129,6 +135,9 @@ This case can come from plugins modifying your .htaccess files to add or change 
 First step is to check your .htaccess file and compare it to a regular one, to see if the problem comes from it.
 
 == Changelog ==
+
+= 1.2.5 =
+* Bugfix
 
 = 1.2.4 =
 * Remove: Third party wpserveur
