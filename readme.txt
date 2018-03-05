@@ -16,9 +16,21 @@ Change wp-login.php to anything you want.
 
 *WPS Hide Login* est un plugin très léger qui vous permet de changer facilement et en toute sécurité l'url de la page de formulaire de connexion. Il ne renomme pas littéralement ou ne modifie pas les fichiers dans le noyau, ni n'ajoute des règles de réécriture. Il intercepte simplement les demandes de pages et fonctionne sur n'importe quel site WordPress. Le répertoire wp-admin et la page wp-login.php deviennent inaccessibles, vous devez donc ajouter un signet ou vous souvenir de l'URL. Désactiver ce plugin ramène votre site exactement à l'état dans lequel il était auparavant.
 
+Ce plugin vous est gentiment proposé par <a href="https://www.wpserveur.net/" target="_blank">WPServeur</a> l'hébergeur spécialisé WordPress.
+
+Découvrez également nos autres extensions gratuites :
+- <a href="https://fr.wordpress.org/plugins/wps-limit-login/" target="_blank">WPS Limit Login</a> pour bloquer les attaques par force brute.
+- <a href="https://fr.wordpress.org/plugins/wps-bidouille/" target="_blank">WPS Bidouille</a> pour optimiser votre WordPress et faire le plein d'infos.
+
 = English =
 
 *WPS Hide Login* is a very light plugin that lets you easily and safely change the url of the login form page to anything you want. It doesn’t literally rename or change files in core, nor does it add rewrite rules. It simply intercepts page requests and works on any WordPress website. The wp-admin directory and wp-login.php page become inaccessible, so you should bookmark or remember the url. Deactivating this plugin brings your site back exactly to the state it was before.
+
+This plugin is kindly proposed by <a href="https://www.wpserveur.net/" target="_blank">WPServeur</a> the specialized WordPress web host.
+
+Discover also our other free extensions:
+– <a href="https://fr.wordpress.org/plugins/wps-limit-login/" target="_blank">WPS Limit Login</a> to block brute force attacks.
+– <a href="https://fr.wordpress.org/plugins/wps-bidouille/" target="_blank">WPS Bidouille</a> to optimize your WordPress and get more info.
 
 = Compatibility =
 
