@@ -141,7 +141,7 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 == Changelog ==
 
 = 1.2.5 =
-* Bugfix
+* Remove : redirect activate
 
 = 1.2.4 =
 * Remove: Third party wpserveur

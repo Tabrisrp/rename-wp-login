@@ -38,7 +38,7 @@ wps_hide_login_load_files( WPS_HIDE_LOGIN_DIR . 'classes/', array(
 	'plugin',
 ) );
 
-register_activation_hook( __FILE__, array( 'WPS_Hide_Login', 'activate' ) );
+//register_activation_hook( __FILE__, array( 'WPS_Hide_Login', 'activate' ) );
 
 add_action( 'plugins_loaded', 'plugins_loaded_wps_hide_login_plugin' );
 function plugins_loaded_wps_hide_login_plugin() {

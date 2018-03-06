@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WPS Hide Login\n"
-"POT-Creation-Date: 2018-02-12 11:08+0100\n"
-"PO-Revision-Date: 2018-02-12 11:08+0100\n"
+"POT-Creation-Date: 2018-03-06 10:48+0100\n"
+"PO-Revision-Date: 2018-03-06 10:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,8 @@ msgid "Please upgrade to the latest version of WordPress to activate"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: classes/plugin.php:164 classes/plugin.php:184 classes/plugin.php:528
-#: classes/plugin.php:531
+#: classes/plugin.php:164 classes/plugin.php:184 classes/plugin.php:540
+#: classes/plugin.php:549
 msgid "WPS Hide Login"
 msgstr ""
 
@@ -43,7 +43,7 @@ msgid ""
 "the url."
 msgstr ""
 
-#: classes/plugin.php:186 classes/plugin.php:274
+#: classes/plugin.php:186 classes/plugin.php:285
 #, php-format
 msgid ""
 "Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
@@ -59,51 +59,59 @@ msgstr ""
 msgid "Login url"
 msgstr ""
 
-#: classes/plugin.php:274
+#: classes/plugin.php:285
 msgid "WordPress specialized hosting"
 msgstr ""
 
-#: classes/plugin.php:275
+#: classes/plugin.php:286
 msgid "Discover our other plugins:"
 msgstr ""
 
-#: classes/plugin.php:276
+#: classes/plugin.php:287
+msgid "the plugin"
+msgstr ""
+
+#: classes/plugin.php:287
 msgid "WPS Bidouille"
 msgstr ""
 
-#: classes/plugin.php:285
+#: classes/plugin.php:288
+msgid "and"
+msgstr ""
+
+#: classes/plugin.php:288
+msgid "WPS Limit Login"
+msgstr ""
+
+#: classes/plugin.php:297
 #, php-format
 msgid ""
 "To set a networkwide default, go to <a href=\"%s\">Network Settings</a>."
 msgstr ""
 
-#: classes/plugin.php:305
+#: classes/plugin.php:317
 msgid ""
 "Protect your website by changing the login URL and preventing access to the "
 "wp-login.php page and the wp-admin directory to non-connected people."
 msgstr ""
 
-#: classes/plugin.php:320
+#: classes/plugin.php:332
 #, php-format
 msgid ""
 "Your login page is now here: <strong><a href=\"%1$s\">%2$s</a></strong>. "
 "Bookmark this page!"
 msgstr ""
 
-#: classes/plugin.php:331 classes/plugin.php:335
+#: classes/plugin.php:343 classes/plugin.php:347
 msgid "Settings"
 msgstr ""
 
-#: classes/plugin.php:351
+#: classes/plugin.php:363
 msgid "This feature is not enabled."
 msgstr ""
 
-#: classes/plugin.php:382
+#: classes/plugin.php:394
 msgid "This has been disabled"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/Tabrisrp/wps-hide-login"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -113,9 +121,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Remy Perona for WPServeur"
+msgid "WPServeur, NicolasKulka, tabrisrp"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://profiles.wordpress.org/tabrisrp/"
+msgid "https://wpserveur.net"
 msgstr ""
