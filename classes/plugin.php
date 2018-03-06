@@ -259,7 +259,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			if ( ! is_multisite()
 			     || is_super_admin() ) {
 
-				$details_url = add_query_arg(
+				$details_url_wpsbidouille = add_query_arg(
 					array(
 						'tab'       => 'plugin-information',
 						'plugin'    => 'wps-bidouille',
@@ -270,10 +270,22 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 					admin_url( 'plugin-install.php' )
 				);
 
+				$details_url_wpslimitlogin = add_query_arg(
+					array(
+						'tab'       => 'plugin-information',
+						'plugin'    => 'wps-limit-login',
+						'TB_iframe' => true,
+						'width'     => 722,
+						'height'    => 949,
+					),
+					admin_url( 'plugin-install.php' )
+				);
+
 				$out .= '<div id="whl_settings">';
 				$out .= sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wpserveur-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wpserveur-hide-login' ) . ')';
 				$out .= '<br>' . __( 'Discover our other plugins:', 'wpserveur-hide-login' ) . ' ';
-				$out .= '<a href="' . $details_url .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wpserveur-hide-login' ) . '</a>';
+				$out .= __('the plugin', 'wpserveur-hide-login' ) . ' <a href="' . $details_url_wpsbidouille .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wpserveur-hide-login' ) . '</a>';
+				$out .= ' ' . __( 'and', 'wpserveur-hide-login' ) . ' <a href="' . $details_url_wpslimitlogin .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Limit Login', 'wpserveur-hide-login' ) . '</a>';
 				$out .= '</div>';
 
 			}

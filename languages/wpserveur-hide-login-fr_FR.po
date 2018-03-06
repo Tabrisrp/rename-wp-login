@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WPS Hide Login - Stable (latest release)\n"
-"POT-Creation-Date: 2018-02-12 11:09+0100\n"
-"PO-Revision-Date: 2018-02-12 11:09+0100\n"
+"POT-Creation-Date: 2018-03-06 10:48+0100\n"
+"PO-Revision-Date: 2018-03-06 10:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -19,8 +19,8 @@ msgid "Please upgrade to the latest version of WordPress to activate"
 msgstr "Veuillez mettre à jour WordPress dans sa dernière version pour activer"
 
 #. Plugin Name of the plugin/theme
-#: classes/plugin.php:164 classes/plugin.php:184 classes/plugin.php:528
-#: classes/plugin.php:531
+#: classes/plugin.php:164 classes/plugin.php:184 classes/plugin.php:540
+#: classes/plugin.php:549
 msgid "WPS Hide Login"
 msgstr "WPS Hide Login"
 
@@ -43,7 +43,7 @@ msgstr ""
 "qui peut ensuite être remplacé pour chaque site individuellement. Allez "
 "simplement dans les réglages des permaliens du site pour modifier l’URL."
 
-#: classes/plugin.php:186 classes/plugin.php:274
+#: classes/plugin.php:186 classes/plugin.php:285
 #, php-format
 msgid ""
 "Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
@@ -62,19 +62,31 @@ msgstr "Réglage par défaut du réseau"
 msgid "Login url"
 msgstr "URL de connexion"
 
-#: classes/plugin.php:274
+#: classes/plugin.php:285
 msgid "WordPress specialized hosting"
 msgstr "Hébergement spécialisé WordPress"
 
-#: classes/plugin.php:275
+#: classes/plugin.php:286
 msgid "Discover our other plugins:"
-msgstr "Découvrez notre dernière création, le plugin"
+msgstr "Découvrez nos dernières créations,"
 
-#: classes/plugin.php:276
+#: classes/plugin.php:287
+msgid "the plugin"
+msgstr "le plugin"
+
+#: classes/plugin.php:287
 msgid "WPS Bidouille"
 msgstr "WPS Bidouille"
 
-#: classes/plugin.php:285
+#: classes/plugin.php:288
+msgid "and"
+msgstr "et"
+
+#: classes/plugin.php:288
+msgid "WPS Limit Login"
+msgstr "WPS Limit Login"
+
+#: classes/plugin.php:297
 #, php-format
 msgid ""
 "To set a networkwide default, go to <a href=\"%s\">Network Settings</a>."
@@ -82,7 +94,7 @@ msgstr ""
 "Pour définir un réglage par défaut pour le réseau, allez aux <a href=\"%s"
 "\">réglages du réseaux</a>."
 
-#: classes/plugin.php:305
+#: classes/plugin.php:317
 msgid ""
 "Protect your website by changing the login URL and preventing access to the "
 "wp-login.php page and the wp-admin directory to non-connected people."
@@ -91,7 +103,7 @@ msgstr ""
 "l’accès à la page wp-login.php et au répertoire wp-admin aux personnes non-"
 "connectées."
 
-#: classes/plugin.php:320
+#: classes/plugin.php:332
 #, php-format
 msgid ""
 "Your login page is now here: <strong><a href=\"%1$s\">%2$s</a></strong>. "
@@ -100,21 +112,17 @@ msgstr ""
 "Votre page de connexion est maintenant ici : <strong><a href=\"%1$s\">%2$s</"
 "a></strong>. Mettez-la en favori !"
 
-#: classes/plugin.php:331 classes/plugin.php:335
+#: classes/plugin.php:343 classes/plugin.php:347
 msgid "Settings"
 msgstr "Réglages"
 
-#: classes/plugin.php:351
+#: classes/plugin.php:363
 msgid "This feature is not enabled."
 msgstr "Cette fonctionnalité n’est pas activée."
 
-#: classes/plugin.php:382
+#: classes/plugin.php:394
 msgid "This has been disabled"
 msgstr "Cela a été désactivé"
-
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/Tabrisrp/wps-hide-login"
-msgstr "https://github.com/Tabrisrp/wps-hide-login"
 
 #. Description of the plugin/theme
 msgid ""
@@ -126,12 +134,24 @@ msgstr ""
 "connectées. "
 
 #. Author of the plugin/theme
-msgid "Remy Perona for WPServeur"
-msgstr "Remy Perona de WPServeur"
+msgid "WPServeur, NicolasKulka, tabrisrp"
+msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://profiles.wordpress.org/tabrisrp/"
-msgstr "http://profiles.wordpress.org/tabrisrp/"
+msgid "https://wpserveur.net"
+msgstr ""
+
+#~ msgid "the plugin WPS Bidouille"
+#~ msgstr "le plugin WPS Bidouille"
+
+#~ msgid "https://github.com/Tabrisrp/wps-hide-login"
+#~ msgstr "https://github.com/Tabrisrp/wps-hide-login"
+
+#~ msgid "Remy Perona for WPServeur"
+#~ msgstr "Remy Perona de WPServeur"
+
+#~ msgid "http://profiles.wordpress.org/tabrisrp/"
+#~ msgstr "http://profiles.wordpress.org/tabrisrp/"
 
 #~ msgid ""
 #~ "Need help? Try the <a href=\"%1$s\" target=\"_blank\">support forum</a>. "
