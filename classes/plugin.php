@@ -172,7 +172,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 		}
 
 		public static function activate() {
-			add_option( 'whl_redirect', '1' );
+			//add_option( 'whl_redirect', '1' );
 
 			do_action( 'wps_hide_login_activate' );
 		}
