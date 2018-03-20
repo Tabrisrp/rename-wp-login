@@ -445,7 +445,11 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				global $error, $interim_login, $action, $user_login;
 
 				if ( is_user_logged_in() && ! isset( $_REQUEST['action'] ) ) {
-					wp_safe_redirect( admin_url() );
+					if ( is_admin() ) {
+						wp_safe_redirect( admin_url() );
+					} else {
+						wp_safe_redirect( home_url() );
+					}
 					die();
 				}
 
