@@ -76,8 +76,10 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			remove_action( 'template_redirect', 'wp_redirect_admin_locations', 1000 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
-			add_action('admin_menu', array( $this, 'wps_hide_login_menu_page' ) );
+			add_action( 'admin_menu', array( $this, 'wps_hide_login_menu_page' ) );
 			add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
+
+			add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
 		}
 
 		private function use_trailing_slashes() {
@@ -284,8 +286,8 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				$out .= '<div id="whl_settings">';
 				$out .= sprintf( __( 'Need help? Try the <a href="%1$s" target="_blank">support forum</a>. This plugin is kindly brought to you by <a href="%2$s" target="_blank">WPServeur</a>', 'wpserveur-hide-login' ), 'http://wordpress.org/support/plugin/wps-hide-login/', 'https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin' ) . ' (' . __( 'WordPress specialized hosting', 'wpserveur-hide-login' ) . ')';
 				$out .= '<br>' . __( 'Discover our other plugins:', 'wpserveur-hide-login' ) . ' ';
-				$out .= __('the plugin', 'wpserveur-hide-login' ) . ' <a href="' . $details_url_wpsbidouille .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wpserveur-hide-login' ) . '</a>';
-				$out .= ' ' . __( 'and', 'wpserveur-hide-login' ) . ' <a href="' . $details_url_wpslimitlogin .'" class="thickbox open-plugin-details-modal">' . __( 'WPS Limit Login', 'wpserveur-hide-login' ) . '</a>';
+				$out .= __( 'the plugin', 'wpserveur-hide-login' ) . ' <a href="' . $details_url_wpsbidouille . '" class="thickbox open-plugin-details-modal">' . __( 'WPS Bidouille', 'wpserveur-hide-login' ) . '</a>';
+				$out .= ' ' . __( 'and', 'wpserveur-hide-login' ) . ' <a href="' . $details_url_wpslimitlogin . '" class="thickbox open-plugin-details-modal">' . __( 'WPS Limit Login', 'wpserveur-hide-login' ) . '</a>';
 				$out .= '</div>';
 
 			}
@@ -539,7 +541,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 		public function wps_hide_login_menu_page() {
 			$title = __( 'WPS Hide Login' );
 
-			add_options_page($title, $title, 'manage_options', 'whl_settings', array(
+			add_options_page( $title, $title, 'manage_options', 'whl_settings', array(
 				$this,
 				'settings_page'
 			) );
@@ -552,6 +554,21 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 		public function whl_template_redirect() {
 			if ( ! empty( $_GET ) && isset( $_GET['page'] ) && 'whl_settings' === $_GET['page'] ) {
 				wp_redirect( admin_url( 'options-general.php#whl_settings' ) );
+				exit();
+			}
+		}
+
+		/**
+		 * Update redirect for Woocommerce email notification
+		 */
+		public function wps_hide_login_redirect_page_email_notif_woocommerce() {
+
+			if ( ! class_exists( 'WC_Form_Handler' ) ) {
+				return false;
+			}
+
+			if ( ! empty( $_GET ) && isset( $_GET['action'] ) && 'rp' === $_GET['action'] && isset( $_GET['key'] ) && isset( $_GET['login'] ) ) {
+				wp_redirect( $this->new_login_url() );
 				exit();
 			}
 		}
