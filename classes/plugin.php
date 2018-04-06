@@ -524,10 +524,8 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 		/**
 		 * Load scripts
 		 */
-		public function admin_enqueue_scripts() {
-			$screen = get_current_screen();
-
-			if ( 'options-general' != $screen->id ) {
+		public function admin_enqueue_scripts( $hook ) {
+			if ( 'options-general.php' != $hook ) {
 				return false;
 			}
 
