@@ -385,6 +385,15 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 				$pagenow = 'wp-login.php';
 
+			} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-register.php' ) !== false
+				       || untrailingslashit( $request['path'] ) === site_url( 'wp-register', 'relative' ) )
+				     && ! is_admin() ) {
+
+				$this->wp_login_php = true;
+
+				$_SERVER['REQUEST_URI'] = $this->user_trailingslashit( '/' . str_repeat( '-/', 10 ) );
+
+				$pagenow = 'index.php';
 			}
 
 		}
