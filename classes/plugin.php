@@ -386,8 +386,8 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				$pagenow = 'wp-login.php';
 
 			} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-register.php' ) !== false
-				       || untrailingslashit( $request['path'] ) === site_url( 'wp-register', 'relative' ) )
-				     && ! is_admin() ) {
+			             || untrailingslashit( $request['path'] ) === site_url( 'wp-register', 'relative' ) )
+			           && ! is_admin() ) {
 
 				$this->wp_login_php = true;
 
@@ -501,6 +501,10 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				if ( isset( $args[1] ) ) {
 
 					parse_str( $args[1], $args );
+
+					if ( isset( $args['login'] ) ) {
+						$args['login'] = rawurlencode( $args['login'] );
+					}
 
 					$url = add_query_arg( $args, $this->new_login_url( $scheme ) );
 
