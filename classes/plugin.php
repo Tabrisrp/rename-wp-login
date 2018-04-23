@@ -360,7 +360,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			if ( ! is_multisite()
 			     && ( strpos( $_SERVER['REQUEST_URI'], 'wp-signup' ) !== false
-			          || strpos( $_SERVER['REQUEST_URI'], 'wp-activate' ) ) !== false ) {
+			          || strpos( $_SERVER['REQUEST_URI'], 'wp-activate' ) !== false ) && apply_filters( 'wps_hide_login_signup_enable' , false ) === false ) {
 
 				wp_die( __( 'This feature is not enabled.', 'wpserveur-hide-login' ) );
 
