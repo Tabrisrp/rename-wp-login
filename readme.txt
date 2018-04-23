@@ -140,6 +140,9 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 
 == Changelog ==
 
+= 1.3.3 =
+* Add : Filter hook for enable wp-signup (@sumobi)
+
 = 1.3.2 =
 * Fix : Encoding of the login with a space in the emails
 
