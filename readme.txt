@@ -142,6 +142,7 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 
 = 1.3.4 =
 * Add : Review message
+* Fix : Redirect url wp-admin/options.php
 
 = 1.3.3 =
 * Add : Filter hook for enable wp-signup (@sumobi)
