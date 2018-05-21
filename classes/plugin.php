@@ -80,6 +80,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
 
 			add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
+			add_filter( 'login_url', array( __CLASS__, 'login_url' ), 10, 3 );
 		}
 
 		private function use_trailing_slashes() {
@@ -360,7 +361,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 
 			if ( ! is_multisite()
 			     && ( strpos( $_SERVER['REQUEST_URI'], 'wp-signup' ) !== false
-			          || strpos( $_SERVER['REQUEST_URI'], 'wp-activate' ) !== false ) && apply_filters( 'wps_hide_login_signup_enable' , false ) === false ) {
+			          || strpos( $_SERVER['REQUEST_URI'], 'wp-activate' ) !== false ) && apply_filters( 'wps_hide_login_signup_enable', false ) === false ) {
 
 				wp_die( __( 'This feature is not enabled.', 'wpserveur-hide-login' ) );
 
@@ -582,6 +583,35 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 				wp_redirect( $this->new_login_url() );
 				exit();
 			}
+		}
+
+		/**
+		 *
+		 * Update url redirect : wp-admin/options.php
+		 *
+		 * @param $login_url
+		 * @param $redirect
+		 * @param $force_reauth
+		 *
+		 * @return string
+		 */
+		public function login_url( $login_url, $redirect, $force_reauth ) {
+
+			if ( $force_reauth === false ) {
+				return $login_url;
+			}
+
+			if ( empty( $redirect ) ) {
+				return $login_url;
+			}
+
+			$redirect = explode( '?', $redirect );
+
+			if ( $redirect[0] === admin_url( 'options.php' ) ) {
+				$login_url = admin_url();
+			}
+
+			return $login_url;
 		}
 
 	}

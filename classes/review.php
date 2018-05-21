@@ -201,7 +201,7 @@ if ( ! class_exists( 'WP_Review_Me' ) ) {
 		 */
 		public function is_time() {
 			$installed = (int) get_option( $this->key, false );
-			if ( false === $installed ) {
+			if ( false == $installed ) {
 				$this->setup_date();
 				$installed = time();
 			}
@@ -363,6 +363,7 @@ if ( ! class_exists( 'WP_Review_Me' ) ) {
 if( 'fr_FR' === get_locale() ) {
 	new WP_Review_Me(
 		array(
+			'days_after' => 10,
 			'type'       => 'plugin',
 			'slug'       => 'wps-hide-login',
 			'message'    => 'Vous aimez l\'extension WPS Hide Login ?<br>Merci de prendre quelques secondes pour nous noter sur',
@@ -372,6 +373,7 @@ if( 'fr_FR' === get_locale() ) {
 } else {
 	new WP_Review_Me(
 		array(
+			'days_after' => 10,
 			'type'       => 'plugin',
 			'slug'       => 'wps-hide-login',
 			'message'    => __( 'Do you like plugin WPS Hide Login? <br> Thank you for taking a few seconds to note us on', 'wps-hide-login' ),
