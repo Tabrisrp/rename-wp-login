@@ -80,7 +80,7 @@ if ( ! class_exists( 'WPS_Hide_Login' ) ) {
 			add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
 
 			add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
-			add_filter( 'login_url', array( __CLASS__, 'login_url' ), 10, 3 );
+			add_filter( 'login_url', array( $this, 'login_url' ), 10, 3 );
 		}
 
 		private function use_trailing_slashes() {
