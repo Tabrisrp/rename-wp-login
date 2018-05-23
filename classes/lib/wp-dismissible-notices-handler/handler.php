@@ -104,13 +104,13 @@ if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 
 			// Make sure PHP is compatible
 			if ( ! self::$instance->is_php_compatible() ) {
-				self::$instance->spit_error(
+				/*self::$instance->spit_error(
 					sprintf(
-						/* translators: %s: required php version */
+
 						esc_html__( 'The library can not be used because your version of PHP is too old. You need version %s at least.', 'wp-dismissible-notices-handler' ),
 						self::$instance->php_version_required
 					)
-				);
+				);*/
 
 				return;
 			}

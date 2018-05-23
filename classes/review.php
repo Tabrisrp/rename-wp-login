@@ -126,12 +126,12 @@ if ( ! class_exists( 'WP_Review_Me' ) ) {
 			}
 			// Make sure PHP is compatible
 			if ( ! $this->is_php_compatible() ) {
-				$this->spit_error(
+				/*$this->spit_error(
 					sprintf(
 						esc_html__( 'The library can not be used because your version of PHP is too old. You need version %s at least.', 'wp-review-me' ),
 						$this->php_version_required
 					)
-				);
+				);*/
 
 				return;
 			}
