@@ -21,6 +21,7 @@ Ce plugin vous est gentiment proposé par <a href="https://www.wpserveur.net/?re
 Découvrez également nos autres extensions gratuites :
 - <a href="https://fr.wordpress.org/plugins/wps-limit-login/" target="_blank">WPS Limit Login</a> pour bloquer les attaques par force brute.
 - <a href="https://fr.wordpress.org/plugins/wps-bidouille/" target="_blank">WPS Bidouille</a> pour optimiser votre WordPress et faire le plein d'infos.
+- <a href="https://fr.wordpress.org/plugins/wps-cleaner/">WPS Cleaner</a> pour nettoyer votre site WordPress.
 
 Ce plugin est seulement maintenu, ce qui signifie que nous ne garantissons pas un support gratuit. Envisagez de signaler un problème et soyez patient.
 
@@ -33,6 +34,7 @@ This plugin is kindly proposed by <a href="https://www.wpserveur.net/?refwps=14&
 Discover also our other free extensions:
 - <a href="https://wordpress.org/plugins/wps-limit-login/" target="_blank">WPS Limit Login</a> to block brute force attacks.
 - <a href="https://wordpress.org/plugins/wps-bidouille/" target="_blank">WPS Bidouille</a> to optimize your WordPress and get more info.
+- <a href="https://wordpress.org/plugins/wps-cleaner/" target="_blank">WPS Cleaner</a> to clean your WordPress site.
 
 This plugin is only maintained, which means we do not guarantee free support. Consider reporting a problem and be patient.
 
