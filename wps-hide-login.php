@@ -41,8 +41,8 @@ wps_hide_login_load_files( WPS_HIDE_LOGIN_DIR . 'classes/', array(
 
 register_activation_hook( __FILE__, array( 'WPS_Hide_Login', 'activate' ) );
 
-add_action( 'plugins_loaded', 'plugins_loaded_wps_hide_login_plugin' );
-function plugins_loaded_wps_hide_login_plugin() {
+add_action( 'plugins_loaded', 'wps_hide_login_load_textdomain' );
+function wps_hide_login_load_textdomain() {
 	new WPS_Hide_Login;
 
 	load_plugin_textdomain( 'wpserveur-hide-login', false, dirname( WPS_HIDE_LOGIN_BASENAME ) . '/languages' );
