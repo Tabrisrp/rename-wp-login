@@ -88,7 +88,7 @@ if ( ! class_exists( 'WP_Review_Me' ) ) {
 			$this->scope      = $args['scope'];
 
 			// Set the unique identifying key for this instance
-			$this->key     = 'wrm_' . substr( md5( plugin_basename( __FILE__ ) ), 0, 20 );
+			$this->key     = 'wrm_' . substr( md5( plugin_basename( __FILE__ ) . $args['slug'] ), 0, 20 );
 			$this->link_id = 'wrm-review-link-' . $this->key;
 
 			// Instantiate

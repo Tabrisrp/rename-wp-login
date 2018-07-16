@@ -20,8 +20,14 @@
   "type":"wordpress-plugin",
   "minimum-stability":"stable",
   "license":"GPL-3.0+",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/NicolasKulka/WP-Review-Me"
+    }
+  ],
   "require":{
     "php":">=5.6.0",
-    "julien731/wp-review-me":"2.0.1"
+    "NicolasKulka/wp-review-me":"2.1"
   }
 }

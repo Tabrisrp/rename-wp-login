@@ -1,5 +1,49 @@
 [
     {
+        "name": "NicolasKulka/wp-review-me",
+        "version": "2.1",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/NicolasKulka/WP-Review-Me.git",
+            "reference": "827ba4e6ecd615f603e13812a32b8ad94fe32490"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/827ba4e6ecd615f603e13812a32b8ad94fe32490",
+            "reference": "827ba4e6ecd615f603e13812a32b8ad94fe32490",
+            "shasum": ""
+        },
+        "require": {
+            "julien731/wp-dismissible-notices-handler": "1.*",
+            "php": ">=5.5.0"
+        },
+        "time": "2018-07-16T13:55:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "review.php"
+            ]
+        },
+        "license": [
+            "GNU GPL"
+        ],
+        "authors": [
+            {
+                "name": "Julien Liabeuf",
+                "email": "julien@liabeuf.fr",
+                "homepage": "https://julienliabeuf.com",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
+        "homepage": "https://github.com/julien731/WP-Review-Me",
+        "support": {
+            "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.1"
+        }
+    },
+    {
         "name": "julien731/wp-dismissible-notices-handler",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -39,47 +83,5 @@
         ],
         "description": "A simple library to handle Ajax-dismissible admin notices for WordPress",
         "homepage": "https://github.com/julien731/WP-Dismissible-Notices-Handler"
-    },
-    {
-        "name": "julien731/wp-review-me",
-        "version": "2.0.1",
-        "version_normalized": "2.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/julien731/WP-Review-Me.git",
-            "reference": "cb43e768e0dc1e2eb8e1a3a96ffa3dfd9f890602"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/julien731/WP-Review-Me/zipball/cb43e768e0dc1e2eb8e1a3a96ffa3dfd9f890602",
-            "reference": "cb43e768e0dc1e2eb8e1a3a96ffa3dfd9f890602",
-            "shasum": ""
-        },
-        "require": {
-            "julien731/wp-dismissible-notices-handler": "1.*",
-            "php": ">=5.5.0"
-        },
-        "time": "2016-09-27T04:04:50+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "review.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GNU GPL"
-        ],
-        "authors": [
-            {
-                "name": "Julien Liabeuf",
-                "email": "julien@liabeuf.fr",
-                "homepage": "https://julienliabeuf.com",
-                "role": "Lead Developer"
-            }
-        ],
-        "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
-        "homepage": "https://github.com/julien731/WP-Review-Me"
     }
 ]

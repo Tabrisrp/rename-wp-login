@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'c14057a02afc95b84dc5bf85d98c5b66' => $vendorDir . '/julien731/wp-dismissible-notices-handler/handler.php',
-    'a50f2d2ba04e0c6b552331bf2bdeba41' => $vendorDir . '/julien731/wp-review-me/review.php',
+    '642f204a71b38c9724089b10b2126d4f' => $vendorDir . '/NicolasKulka/wp-review-me/review.php',
 );

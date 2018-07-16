@@ -8,7 +8,7 @@ class ComposerStaticInit71244fc19bd731ff2404f3641ca151d8
 {
     public static $files = array (
         'c14057a02afc95b84dc5bf85d98c5b66' => __DIR__ . '/..' . '/julien731/wp-dismissible-notices-handler/handler.php',
-        'a50f2d2ba04e0c6b552331bf2bdeba41' => __DIR__ . '/..' . '/julien731/wp-review-me/review.php',
+        '642f204a71b38c9724089b10b2126d4f' => __DIR__ . '/..' . '/NicolasKulka/wp-review-me/review.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
