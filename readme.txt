@@ -144,7 +144,7 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 == Changelog ==
 
 = 1.4 =
-* Enhancement code with namespace and autoload
+* Enhancement code with composer, namespace and autoload
 
 = 1.3.4.2 =
 * Fix : Remove message review if PHP is too old
