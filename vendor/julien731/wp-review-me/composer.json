@@ -1,0 +1,21 @@
+{
+  "name": "julien731/wp-review-me",
+  "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
+  "homepage": "https://github.com/julien731/WP-Review-Me",
+  "license": "GNU GPL",
+  "authors": [
+    {
+      "name": "Julien Liabeuf",
+      "email": "julien@liabeuf.fr",
+      "homepage": "https://julienliabeuf.com",
+      "role": "Lead Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "julien731/wp-dismissible-notices-handler": "1.*"
+  },
+  "autoload": {
+    "files": ["review.php"]
+  }
+}

@@ -5,9 +5,11 @@ Description: Protect your website by changing the login URL and preventing acces
 Donate link: https://www.paypal.me/donateWPServeur
 Author: WPServeur, NicolasKulka, tabrisrp
 Author URI: https://wpserveur.net
-Version: 1.3.4.2
-Requires at least: 4.1
+Version: 1.4
+Requires at least: 4.2
 Tested up to: 4.9
+Domain Path: languages
+Text Domain: wpserveur-hide-login
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -18,33 +20,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'WPS_HIDE_LOGIN_VERSION', '1.3.4.2' );
+define( 'WPS_HIDE_LOGIN_VERSION', '1.4' );
 define( 'WPS_HIDE_LOGIN_FOLDER', 'wps-hide-login' );
 
 define( 'WPS_HIDE_LOGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPS_HIDE_LOGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPS_HIDE_LOGIN_BASENAME', plugin_basename( __FILE__ ) );
 
-// Function for easy load files
-function wps_hide_login_load_files( $dir, $files, $prefix = '' ) {
-	foreach ( $files as $file ) {
-		if ( is_file( $dir . $prefix . $file . '.php' ) ) {
-			require_once( $dir . $prefix . $file . '.php' );
-		}
-	}
-}
+require_once WPS_HIDE_LOGIN_DIR . 'autoload.php';
 
-// Plugin client classes
-wps_hide_login_load_files( WPS_HIDE_LOGIN_DIR . 'classes/', array(
-	'plugin',
-	'review',
-) );
-
-register_activation_hook( __FILE__, array( 'WPS_Hide_Login', 'activate' ) );
+register_activation_hook( __FILE__, array( '\WPS\WPS_Hide_Login\Plugin', 'activate' ) );
 
 add_action( 'plugins_loaded', 'plugins_loaded_wps_hide_login_plugin' );
 function plugins_loaded_wps_hide_login_plugin() {
-	new WPS_Hide_Login;
+	\WPS\WPS_Hide_Login\Plugin::get_instance();
 
 	load_plugin_textdomain( 'wpserveur-hide-login', false, dirname( WPS_HIDE_LOGIN_BASENAME ) . '/languages' );
+
+	$message = __( 'Do you like plugin WPS Hide Login? <br> Thank you for taking a few seconds to note us on', 'wps-hide-login' );
+	if( 'fr_FR' === get_locale() ) {
+		$message = 'Vous aimez l\'extension WPS Hide Login ?<br>Merci de prendre quelques secondes pour nous noter sur';
+	}
+
+	new \WP_Review_Me(
+		array(
+			'days_after' => 10,
+			'type'       => 'plugin',
+			'slug'       => 'wps-hide-login',
+			'message'    => $message,
+			'link_label' => 'WordPress.org'
+		)
+	);
 }
