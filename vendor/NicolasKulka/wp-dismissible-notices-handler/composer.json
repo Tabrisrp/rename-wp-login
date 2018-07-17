@@ -1,5 +1,5 @@
 {
-  "name": "julien731/wp-dismissible-notices-handler",
+  "name": "NicolasKulka/wp-dismissible-notices-handler",
   "description": "A simple library to handle Ajax-dismissible admin notices for WordPress",
   "homepage": "https://github.com/julien731/WP-Dismissible-Notices-Handler",
   "license": "GNU GPL",

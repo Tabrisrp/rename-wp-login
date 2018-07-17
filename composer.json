@@ -24,10 +24,14 @@
     {
       "type": "vcs",
       "url": "https://github.com/NicolasKulka/WP-Review-Me"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler"
     }
   ],
   "require":{
     "php":">=5.6.0",
-    "NicolasKulka/wp-review-me":"2.2"
+    "NicolasKulka/wp-review-me":"2.5"
   }
 }

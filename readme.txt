@@ -3,9 +3,9 @@
 Contributors: tabrisrp, WPServeur, nicolaskulka
 Donate link : https://www.paypal.me/donateWPServeur
 Tags: rename, login, wp-login, wp-login.php, custom login url
-Requires at least: 4.2
+Requires at least: 4.1
 Tested up to: 4.9
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -142,6 +142,9 @@ This case can come from plugins modifying your .htaccess files to add or change 
 First step is to check your .htaccess file and compare it to a regular one, to see if the problem comes from it.
 
 == Changelog ==
+
+= 1.4.2 =
+* Fix : Error with library for compat WordPress and PHP
 
 = 1.4.1 =
 * Fix : Remove message review if PHP is too old

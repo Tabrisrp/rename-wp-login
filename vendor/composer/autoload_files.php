@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'c14057a02afc95b84dc5bf85d98c5b66' => $vendorDir . '/julien731/wp-dismissible-notices-handler/handler.php',
+    '75114bb77681cceeacec8e9fdc25fe5f' => $vendorDir . '/NicolasKulka/wp-dismissible-notices-handler/handler.php',
     '642f204a71b38c9724089b10b2126d4f' => $vendorDir . '/NicolasKulka/wp-review-me/review.php',
 );

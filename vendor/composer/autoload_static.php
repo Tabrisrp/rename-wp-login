@@ -4,10 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit71244fc19bd731ff2404f3641ca151d8
+class ComposerStaticInitaaeeb2759878cb59c7a1ebca78d83d93
 {
     public static $files = array (
-        'c14057a02afc95b84dc5bf85d98c5b66' => __DIR__ . '/..' . '/julien731/wp-dismissible-notices-handler/handler.php',
+        '75114bb77681cceeacec8e9fdc25fe5f' => __DIR__ . '/..' . '/NicolasKulka/wp-dismissible-notices-handler/handler.php',
         '642f204a71b38c9724089b10b2126d4f' => __DIR__ . '/..' . '/NicolasKulka/wp-review-me/review.php',
     );
 
