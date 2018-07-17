@@ -28,6 +28,6 @@
   ],
   "require":{
     "php":">=5.6.0",
-    "NicolasKulka/wp-review-me":"2.1"
+    "NicolasKulka/wp-review-me":"2.2"
   }
 }

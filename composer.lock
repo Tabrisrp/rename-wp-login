@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "27883b8b40a031c1668da69b7163d293",
+    "content-hash": "6a8b3b4f1f3b674d44cc9d920edfcb46",
     "packages": [
         {
             "name": "NicolasKulka/wp-review-me",
-            "version": "2.1",
+            "version": "2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NicolasKulka/WP-Review-Me.git",
-                "reference": "827ba4e6ecd615f603e13812a32b8ad94fe32490"
+                "reference": "0d5958af5fb37f7db0b1fb7e3219a83c4730c508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/827ba4e6ecd615f603e13812a32b8ad94fe32490",
-                "reference": "827ba4e6ecd615f603e13812a32b8ad94fe32490",
+                "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/0d5958af5fb37f7db0b1fb7e3219a83c4730c508",
+                "reference": "0d5958af5fb37f7db0b1fb7e3219a83c4730c508",
                 "shasum": ""
             },
             "require": {
@@ -44,9 +44,9 @@
             "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
             "homepage": "https://github.com/julien731/WP-Review-Me",
             "support": {
-                "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.1"
+                "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.2"
             },
-            "time": "2018-07-16T13:55:07+00:00"
+            "time": "2018-07-17T07:25:09+00:00"
         },
         {
             "name": "julien731/wp-dismissible-notices-handler",

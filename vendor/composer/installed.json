@@ -1,24 +1,24 @@
 [
     {
         "name": "NicolasKulka/wp-review-me",
-        "version": "2.1",
-        "version_normalized": "2.1.0.0",
+        "version": "2.2",
+        "version_normalized": "2.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/NicolasKulka/WP-Review-Me.git",
-            "reference": "827ba4e6ecd615f603e13812a32b8ad94fe32490"
+            "reference": "0d5958af5fb37f7db0b1fb7e3219a83c4730c508"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/827ba4e6ecd615f603e13812a32b8ad94fe32490",
-            "reference": "827ba4e6ecd615f603e13812a32b8ad94fe32490",
+            "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/0d5958af5fb37f7db0b1fb7e3219a83c4730c508",
+            "reference": "0d5958af5fb37f7db0b1fb7e3219a83c4730c508",
             "shasum": ""
         },
         "require": {
             "julien731/wp-dismissible-notices-handler": "1.*",
             "php": ">=5.5.0"
         },
-        "time": "2018-07-16T13:55:07+00:00",
+        "time": "2018-07-17T07:25:09+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -40,7 +40,7 @@
         "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
         "homepage": "https://github.com/julien731/WP-Review-Me",
         "support": {
-            "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.1"
+            "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.2"
         }
     },
     {
