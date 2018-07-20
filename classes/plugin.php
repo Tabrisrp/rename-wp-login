@@ -521,7 +521,7 @@ class Plugin {
 
 	public function forbidden_slugs() {
 
-		$wp = new WP;
+		$wp = new \WP;
 
 		return array_merge( $wp->public_query_vars, $wp->private_query_vars );
 
