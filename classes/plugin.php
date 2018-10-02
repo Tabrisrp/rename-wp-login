@@ -475,6 +475,10 @@ class Plugin {
 
 	public function wp_redirect( $location, $status ) {
 
+		if ( strpos( $location, 'https://wordpress.com/wp-login.php' ) !== false ) {
+			return $location;
+		}
+
 		return $this->filter_wp_login_php( $location );
 
 	}
