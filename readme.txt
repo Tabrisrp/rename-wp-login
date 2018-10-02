@@ -2,7 +2,7 @@
 
 Contributors: tabrisrp, WPServeur, nicolaskulka
 Donate link : https://www.paypal.me/donateWPServeur
-Tags: rename, login, wp-login, wp-login.php, custom login url
+Tags: rename, login, wp-login, wp-login.php, custom login url, jetpack
 Requires at least: 4.1
 Tested up to: 4.9
 Stable tag: 1.4.4
@@ -49,12 +49,13 @@ Il est également compatible avec tout plugin qui se connecte au formulaire de c
 
 * BuddyPress,
 * bbPress,
+* Jetpack,
 * Limit Login Attempts,
 * and User Switching.
 
 Évidemment, cela ne fonctionne pas avec les plugins ou les thèmes *hardcoded* wp-login.php.
 
-Fonctionne en multisite, mais pas testé avec des sous-domaines. L'activer pour un réseau vous permet de définir une valeur par défaut pour l'ensemble du réseau. Les sites individuels peuvent toujours renommer leur page de connexion pour autre chose.
+Fonctionne en multisite, avec sous-domaines ou sous dossiers. L'activer pour un réseau vous permet de définir une valeur par défaut pour l'ensemble du réseau. Les sites individuels peuvent toujours renommer leur page de connexion pour autre chose.
 
 Si vous utilisez un **plugin de mise en cache de pages** autre que WP Rocket, vous devez ajouter le slug de la nouvelle URL de connexion à la liste des pages à ne pas mettre en cache. WP Rocket est déjà entièrement compatible avec le plugin.
 
@@ -68,12 +69,13 @@ It’s also compatible with any plugin that hooks in the login form, including:
 
 * BuddyPress,
 * bbPress,
+* Jetpack,
 * Limit Login Attempts,
 * and User Switching.
 
 Obviously it doesn’t work with plugins or themes that *hardcoded* wp-login.php.
 
-Works with multisite, but not tested with subdomains. Activating it for a network allows you to set a networkwide default. Individual sites can still rename their login page to something else.
+Works with multisite, with subdomains and subfolders. Activating it for a network allows you to set a networkwide default. Individual sites can still rename their login page to something else.
 
 If you’re using a **page caching plugin** other than WP Rocket, you should add the slug of the new login url to the list of pages not to cache. WP Rocket is already fully compatible with the plugin.
 
