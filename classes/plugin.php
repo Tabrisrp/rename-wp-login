@@ -592,6 +592,9 @@ class Plugin {
 	 * @return string
 	 */
 	public function login_url( $login_url, $redirect, $force_reauth ) {
+		if ( is_404() ) {
+			return '#';
+		}
 
 		if ( $force_reauth === false ) {
 			return $login_url;

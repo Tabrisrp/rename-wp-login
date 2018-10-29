@@ -5,7 +5,7 @@ Description: Protect your website by changing the login URL and preventing acces
 Donate link: https://www.paypal.me/donateWPServeur
 Author: WPServeur, NicolasKulka, tabrisrp
 Author URI: https://wpserveur.net
-Version: 1.4.4
+Version: 1.4.5
 Requires at least: 4.1
 Tested up to: 4.9
 Requires PHP: 7.0
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'WPS_HIDE_LOGIN_VERSION', '1.4.4' );
+define( 'WPS_HIDE_LOGIN_VERSION', '1.4.5' );
 define( 'WPS_HIDE_LOGIN_FOLDER', 'wps-hide-login' );
 
 define( 'WPS_HIDE_LOGIN_URL', plugin_dir_url( __FILE__ ) );
