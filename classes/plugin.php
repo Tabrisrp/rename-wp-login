@@ -126,6 +126,16 @@ class Plugin {
 		}
 	}
 
+	private function new_redirect_slug() {
+		if ( $slug = get_option( 'whl_redirect_admin' ) ) {
+			return $slug;
+		} else if ( ( is_multisite() && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) && ( $slug = get_site_option( 'whl_redirect_admin', '404' ) ) ) ) {
+			return $slug;
+		} else if ( $slug = '404' ) {
+			return $slug;
+		}
+	}
+
 	public function new_login_url( $scheme = null ) {
 
 		if ( get_option( 'permalink_structure' ) ) {
@@ -135,6 +145,20 @@ class Plugin {
 		} else {
 
 			return home_url( '/', $scheme ) . '?' . $this->new_login_slug();
+
+		}
+
+	}
+
+	public function new_redirect_url( $scheme = null ) {
+
+		if ( get_option( 'permalink_structure' ) ) {
+
+			return $this->user_trailingslashit( home_url( '/', $scheme ) . $this->new_redirect_slug() );
+
+		} else {
+
+			return home_url( '/', $scheme ) . '?' . $this->new_redirect_slug();
 
 		}
 
@@ -172,6 +196,8 @@ class Plugin {
 		$out .= '<tr valign="top">';
 		$out .= '<th scope="row"><label for="whl_page">' . __( 'Networkwide default', 'wpserveur-hide-login' ) . '</label></th>';
 		$out .= '<td><input id="whl_page" type="text" name="whl_page" value="' . esc_attr( get_site_option( 'whl_page', 'login' ) ) . '"></td>';
+		$out .= '<th scope="row"><label for="whl_redirect_admin">' . __( 'Redirection url default', 'wpserveur-hide-login' ) . '</label></th>';
+		$out .= '<td><input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . esc_attr( get_site_option( 'whl_redirect_admin', '404' ) ) . '"></td>';
 		$out .= '</tr>';
 		$out .= '</table>';
 
@@ -186,6 +212,12 @@ class Plugin {
 			     && ! in_array( $whl_page, $this->forbidden_slugs() ) ) {
 
 				update_site_option( 'whl_page', $whl_page );
+
+			}
+			if ( ( $whl_redirect_admin = sanitize_title_with_dashes( $_POST['whl_redirect_admin'] ) )
+			     && strpos( $whl_redirect_admin, '404' ) === false ) {
+
+				update_site_option( 'whl_redirect_admin', $whl_redirect_admin );
 
 			}
 		}
@@ -210,7 +242,16 @@ class Plugin {
 			'wps-hide-login-section'
 		);
 
+		add_settings_field(
+			'whl_redirect_admin',
+			'<label for="whl_redirect_admin">' . __( 'Redirection url', 'wpserveur-hide-login' ) . '</label>',
+			array( $this, 'whl_redirect_admin_input' ),
+			'general',
+			'wps-hide-login-section'
+		);
+
 		register_setting( 'general', 'whl_page', 'sanitize_title_with_dashes' );
+		register_setting( 'general', 'whl_redirect_admin', 'sanitize_title_with_dashes' );
 
 		if ( get_option( 'whl_redirect' ) ) {
 
@@ -313,6 +354,20 @@ class Plugin {
 
 	}
 
+	public function whl_redirect_admin_input() {
+		if ( get_option( 'permalink_structure' ) ) {
+
+			echo '<code>' . trailingslashit( home_url() ) . '</code> <input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . $this->new_redirect_slug() . '">' . ( $this->use_trailing_slashes() ? ' <code>/</code>' : '' );
+
+		} else {
+
+			echo '<code>' . trailingslashit( home_url() ) . '?</code> <input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . $this->new_redirect_slug() . '">';
+
+		}
+
+		echo '<p class="description">' . __( 'Redirect URL when someone tries to access the wp-login.php page and the wp-admin directory while not logged in.', 'wpserveur-hide-login' ) . '</p>';
+	}
+
 	public function admin_notices() {
 
 		global $pagenow;
@@ -406,7 +461,7 @@ class Plugin {
 		$request = parse_url( $_SERVER['REQUEST_URI'] );
 
 		if ( is_admin() && ! is_user_logged_in() && ! defined( 'DOING_AJAX' ) && $pagenow !== 'admin-post.php' && ( isset( $_GET ) && empty( $_GET['adminhash'] ) && $request['path'] !== '/wp-admin/options.php' ) ) {
-			wp_safe_redirect( home_url( '/404' ) );
+			wp_safe_redirect( $this->new_redirect_url() );
 			die();
 		}
 
