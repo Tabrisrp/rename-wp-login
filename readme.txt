@@ -147,7 +147,7 @@ First step is to check your .htaccess file and compare it to a regular one, to s
 == Changelog ==
 
 = 1.5.1 =
-* Fix : Action URL form get_the_password_form()
+* Fix : Action URL get_the_password_form()
 
 = 1.5 =
 * Enhancement: Add custom redirection URL
