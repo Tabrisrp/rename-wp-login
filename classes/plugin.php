@@ -460,57 +460,61 @@ class Plugin {
 
 		$request = parse_url( $_SERVER['REQUEST_URI'] );
 
-		if ( is_admin() && ! is_user_logged_in() && ! defined( 'DOING_AJAX' ) && $pagenow !== 'admin-post.php' && ( isset( $_GET ) && empty( $_GET['adminhash'] ) && $request['path'] !== '/wp-admin/options.php' ) ) {
-			wp_safe_redirect( $this->new_redirect_url() );
-			die();
-		}
+		if ( ! isset( $_POST['post_password'] ) ) {
 
-		if ( $pagenow === 'wp-login.php'
-		     && $request['path'] !== $this->user_trailingslashit( $request['path'] )
-		     && get_option( 'permalink_structure' ) ) {
-
-			wp_safe_redirect( $this->user_trailingslashit( $this->new_login_url() )
-			                  . ( ! empty( $_SERVER['QUERY_STRING'] ) ? '?' . $_SERVER['QUERY_STRING'] : '' ) );
-
-			die;
-
-		} elseif ( $this->wp_login_php ) {
-
-			if ( ( $referer = wp_get_referer() )
-			     && strpos( $referer, 'wp-activate.php' ) !== false
-			     && ( $referer = parse_url( $referer ) )
-			     && ! empty( $referer['query'] ) ) {
-
-				parse_str( $referer['query'], $referer );
-
-				if ( ! empty( $referer['key'] )
-				     && ( $result = wpmu_activate_signup( $referer['key'] ) )
-				     && is_wp_error( $result )
-				     && ( $result->get_error_code() === 'already_active'
-				          || $result->get_error_code() === 'blog_taken' ) ) {
-
-					wp_safe_redirect( $this->new_login_url()
-					                  . ( ! empty( $_SERVER['QUERY_STRING'] ) ? '?' . $_SERVER['QUERY_STRING'] : '' ) );
-
-					die;
-
-				}
-
-			}
-
-			$this->wp_template_loader();
-
-		} elseif ( $pagenow === 'wp-login.php' ) {
-			global $error, $interim_login, $action, $user_login;
-
-			if ( is_user_logged_in() && ! isset( $_REQUEST['action'] ) ) {
-				wp_safe_redirect( admin_url() );
+			if ( is_admin() && ! is_user_logged_in() && ! defined( 'DOING_AJAX' ) && $pagenow !== 'admin-post.php' && ( isset( $_GET ) && empty( $_GET['adminhash'] ) && $request['path'] !== '/wp-admin/options.php' ) ) {
+				wp_safe_redirect( $this->new_redirect_url() );
 				die();
 			}
 
-			@require_once ABSPATH . 'wp-login.php';
+			if ( $pagenow === 'wp-login.php'
+			     && $request['path'] !== $this->user_trailingslashit( $request['path'] )
+			     && get_option( 'permalink_structure' ) ) {
 
-			die;
+				wp_safe_redirect( $this->user_trailingslashit( $this->new_login_url() )
+				                  . ( ! empty( $_SERVER['QUERY_STRING'] ) ? '?' . $_SERVER['QUERY_STRING'] : '' ) );
+
+				die;
+
+			} elseif ( $this->wp_login_php ) {
+
+				if ( ( $referer = wp_get_referer() )
+				     && strpos( $referer, 'wp-activate.php' ) !== false
+				     && ( $referer = parse_url( $referer ) )
+				     && ! empty( $referer['query'] ) ) {
+
+					parse_str( $referer['query'], $referer );
+
+					if ( ! empty( $referer['key'] )
+					     && ( $result = wpmu_activate_signup( $referer['key'] ) )
+					     && is_wp_error( $result )
+					     && ( $result->get_error_code() === 'already_active'
+					          || $result->get_error_code() === 'blog_taken' ) ) {
+
+						wp_safe_redirect( $this->new_login_url()
+						                  . ( ! empty( $_SERVER['QUERY_STRING'] ) ? '?' . $_SERVER['QUERY_STRING'] : '' ) );
+
+						die;
+
+					}
+
+				}
+
+				$this->wp_template_loader();
+
+			} elseif ( $pagenow === 'wp-login.php' ) {
+				global $error, $interim_login, $action, $user_login;
+
+				if ( is_user_logged_in() && ! isset( $_REQUEST['action'] ) ) {
+					wp_safe_redirect( admin_url() );
+					die();
+				}
+
+				@require_once ABSPATH . 'wp-login.php';
+
+				die;
+
+			}
 
 		}
 
@@ -539,6 +543,10 @@ class Plugin {
 	}
 
 	public function filter_wp_login_php( $url, $scheme = null ) {
+
+		if ( strpos( $url, 'wp-login.php?action=postpass' ) !== false ) {
+			return $url;
+		}
 
 		if ( strpos( $url, 'wp-login.php' ) !== false ) {
 
