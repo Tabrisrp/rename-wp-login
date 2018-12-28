@@ -76,6 +76,14 @@ class Plugin {
 
 		add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
 		add_filter( 'login_url', array( $this, 'login_url' ), 10, 3 );
+
+		add_filter( 'user_request_action_email_content', array( $this, 'user_request_action_email_content' ), 999, 2 );
+	}
+
+	public function user_request_action_email_content( $email_text, $email_data ) {
+		$email_text = str_replace( '###CONFIRM_URL###', esc_url_raw( str_replace( $this->new_login_slug() . '/', 'wp-login.php', $email_data['confirm_url'] ) ), $email_text );
+
+		return $email_text;
 	}
 
 	private function use_trailing_slashes() {
@@ -416,9 +424,13 @@ class Plugin {
 
 		$request = parse_url( $_SERVER['REQUEST_URI'] );
 
-		if ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-login.php' ) !== false
-		       || untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) )
-		     && ! is_admin() ) {
+		if ( strpos( $request['query'], 'action=confirmaction' ) !== false ) {
+			@require_once ABSPATH . 'wp-login.php';
+
+			$pagenow = 'index.php';
+		} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-login.php' ) !== false
+		             || untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) )
+		           && ! is_admin() ) {
 
 			$this->wp_login_php = true;
 
