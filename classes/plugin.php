@@ -424,7 +424,7 @@ class Plugin {
 
 		$request = parse_url( $_SERVER['REQUEST_URI'] );
 
-		if ( strpos( $request['query'], 'action=confirmaction' ) !== false ) {
+		if ( isset( $request['query'] ) && strpos( $request['query'], 'action=confirmaction' ) !== false ) {
 			@require_once ABSPATH . 'wp-login.php';
 
 			$pagenow = 'index.php';
