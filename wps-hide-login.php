@@ -7,7 +7,7 @@ Author: WPServeur, NicolasKulka, tabrisrp
 Author URI: https://wpserveur.net
 Version: 1.5.2.1
 Requires at least: 4.1
-Tested up to: 5.0
+Tested up to: 5.1
 Requires PHP: 7.0
 Domain Path: languages
 Text Domain: wpserveur-hide-login
