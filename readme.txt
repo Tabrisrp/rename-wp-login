@@ -2,7 +2,7 @@
 
 Contributors: tabrisrp, WPServeur, nicolaskulka
 Donate link : https://www.paypal.me/donateWPServeur
-Tags: rename, login, wp-login, wp-login.php, custom login url, jetpack
+Tags: rename, login, wp-login, wp-login.php, custom login url, jetpack, wpserveur
 Requires at least: 4.1
 Tested up to: 5.1
 Requires PHP: 7.0
