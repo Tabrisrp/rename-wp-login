@@ -429,7 +429,7 @@ class Plugin {
 
 			$pagenow = 'index.php';
 		} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-login.php' ) !== false
-		             || untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) )
+		             || ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) ) )
 		           && ! is_admin() ) {
 
 			$this->wp_login_php = true;
@@ -438,7 +438,7 @@ class Plugin {
 
 			$pagenow = 'index.php';
 
-		} elseif ( untrailingslashit( $request['path'] ) === home_url( $this->new_login_slug(), 'relative' )
+		} elseif ( ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === home_url( $this->new_login_slug(), 'relative' ) )
 		           || ( ! get_option( 'permalink_structure' )
 		                && isset( $_GET[ $this->new_login_slug() ] )
 		                && empty( $_GET[ $this->new_login_slug() ] ) ) ) {
@@ -446,7 +446,7 @@ class Plugin {
 			$pagenow = 'wp-login.php';
 
 		} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-register.php' ) !== false
-		             || untrailingslashit( $request['path'] ) === site_url( 'wp-register', 'relative' ) )
+		             || ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === site_url( 'wp-register', 'relative' ) ) )
 		           && ! is_admin() ) {
 
 			$this->wp_login_php = true;
