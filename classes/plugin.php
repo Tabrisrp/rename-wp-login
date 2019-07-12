@@ -74,7 +74,7 @@ class Plugin {
 		add_action( 'admin_menu', array( $this, 'wps_hide_login_menu_page' ) );
 		add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
 
-		add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
+		//add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
 		add_filter( 'login_url', array( $this, 'login_url' ), 10, 3 );
 
 		add_filter( 'user_request_action_email_content', array( $this, 'user_request_action_email_content' ), 999, 2 );
@@ -214,7 +214,7 @@ class Plugin {
 	}
 
 	public function update_wpmu_options() {
-		if ( check_admin_referer( 'siteoptions' ) ) {
+		if ( ! empty( $_POST ) && check_admin_referer( 'siteoptions' ) ) {
 			if ( ( $whl_page = sanitize_title_with_dashes( $_POST['whl_page'] ) )
 			     && strpos( $whl_page, 'wp-login' ) === false
 			     && ! in_array( $whl_page, $this->forbidden_slugs() ) ) {
@@ -424,13 +424,9 @@ class Plugin {
 
 		$request = parse_url( $_SERVER['REQUEST_URI'] );
 
-		if ( isset( $request['query'] ) && strpos( $request['query'], 'action=confirmaction' ) !== false ) {
-			@require_once ABSPATH . 'wp-login.php';
-
-			$pagenow = 'index.php';
-		} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-login.php' ) !== false
-		             || ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) ) )
-		           && ! is_admin() ) {
+		if ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-login.php' ) !== false
+		       || ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) ) )
+		     && ! is_admin() ) {
 
 			$this->wp_login_php = true;
 
@@ -474,11 +470,6 @@ class Plugin {
 
 		if ( ! isset( $_POST['post_password'] ) ) {
 
-			if ( is_admin() && ! is_user_logged_in() && ! defined( 'DOING_AJAX' ) && $pagenow !== 'admin-post.php' && ( isset( $_GET ) && empty( $_GET['adminhash'] ) && $request['path'] !== '/wp-admin/options.php' ) ) {
-				wp_safe_redirect( $this->new_redirect_url() );
-				die();
-			}
-
 			if ( $pagenow === 'wp-login.php'
 			     && $request['path'] !== $this->user_trailingslashit( $request['path'] )
 			     && get_option( 'permalink_structure' ) ) {
@@ -496,6 +487,8 @@ class Plugin {
 				     && ! empty( $referer['query'] ) ) {
 
 					parse_str( $referer['query'], $referer );
+
+					@require_once WPINC . '/ms-functions.php';
 
 					if ( ! empty( $referer['key'] )
 					     && ( $result = wpmu_activate_signup( $referer['key'] ) )
