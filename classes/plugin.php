@@ -470,6 +470,11 @@ class Plugin {
 
 		if ( ! isset( $_POST['post_password'] ) ) {
 
+			if ( is_admin() && ! is_user_logged_in() && ! defined( 'DOING_AJAX' ) && $pagenow !== 'admin-post.php' && ( isset( $_GET ) && $request['path'] !== '/wp-admin/options.php' ) ) {
+				wp_safe_redirect( $this->new_redirect_url() );
+				die();
+			}
+
 			if ( $pagenow === 'wp-login.php'
 			     && $request['path'] !== $this->user_trailingslashit( $request['path'] )
 			     && get_option( 'permalink_structure' ) ) {
@@ -553,7 +558,7 @@ class Plugin {
 			return $url;
 		}
 
-		if ( strpos( $url, 'wp-login.php' ) !== false ) {
+		if ( strpos( $url, 'wp-login.php' ) !== false && strpos( wp_get_referer(), 'wp-login.php' ) === false ) {
 
 			if ( is_ssl() ) {
 
