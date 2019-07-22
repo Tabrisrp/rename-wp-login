@@ -112,12 +112,6 @@ class Plugin {
 
 		wp();
 
-		if ( $_SERVER['REQUEST_URI'] === $this->user_trailingslashit( str_repeat( '-/', 10 ) ) ) {
-
-			$_SERVER['REQUEST_URI'] = $this->user_trailingslashit( '/wp-login-php/' );
-
-		}
-
 		require_once( ABSPATH . WPINC . '/template-loader.php' );
 
 		die;
