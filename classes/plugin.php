@@ -74,6 +74,7 @@ class Plugin {
 		add_action( 'admin_menu', array( $this, 'wps_hide_login_menu_page' ) );
 		add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
 
+		add_action( 'template_redirect', array( $this, 'redirect_export_data' ) );
 		add_filter( 'login_url', array( $this, 'login_url' ), 10, 3 );
 
 		add_filter( 'user_request_action_email_content', array( $this, 'user_request_action_email_content' ), 999, 2 );
@@ -407,6 +408,23 @@ class Plugin {
 
 		return $links;
 
+	}
+
+	public function redirect_export_data() {
+		if ( ! empty( $_GET ) && isset( $_GET['action'] ) && 'confirmaction' === $_GET['action'] && isset( $_GET['request_id'] ) && isset( $_GET['confirm_key'] ) ) {
+			$request_id = (int) $_GET['request_id'];
+			$key        = sanitize_text_field( wp_unslash( $_GET['confirm_key'] ) );
+			$result     = wp_validate_user_request_key( $request_id, $key );
+			if ( ! is_wp_error( $result ) ) {
+				wp_redirect( add_query_arg( array(
+					'action'      => 'confirmaction',
+					'request_id'  => $_GET['request_id'],
+					'confirm_key' => $_GET['confirm_key']
+				), $this->new_login_url()
+				) );
+				exit();
+			}
+		}
 	}
 
 	public function plugins_loaded() {
