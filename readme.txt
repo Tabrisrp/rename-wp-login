@@ -6,7 +6,7 @@ Tags: rename, login, wp-login, wp-login.php, custom login url, jetpack, wpserveu
 Requires at least: 4.1
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 1.5.2.2
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -145,6 +145,9 @@ This case can come from plugins modifying your .htaccess files to add or change 
 First step is to check your .htaccess file and compare it to a regular one, to see if the problem comes from it.
 
 == Changelog ==
+
+= 1.5.3 =
+* Fix : Security vulnerabilities (Thanks @juliobox)
 
 = 1.5.2.2 =
 * Tested up to 5.2
