@@ -74,7 +74,6 @@ class Plugin {
 		add_action( 'admin_menu', array( $this, 'wps_hide_login_menu_page' ) );
 		add_action( 'admin_init', array( $this, 'whl_template_redirect' ) );
 
-		//add_action( 'template_redirect', array( $this, 'wps_hide_login_redirect_page_email_notif_woocommerce' ) );
 		add_filter( 'login_url', array( $this, 'login_url' ), 10, 3 );
 
 		add_filter( 'user_request_action_email_content', array( $this, 'user_request_action_email_content' ), 999, 2 );
@@ -635,21 +634,6 @@ class Plugin {
 	public function whl_template_redirect() {
 		if ( ! empty( $_GET ) && isset( $_GET['page'] ) && 'whl_settings' === $_GET['page'] ) {
 			wp_redirect( admin_url( 'options-general.php#whl_settings' ) );
-			exit();
-		}
-	}
-
-	/**
-	 * Update redirect for Woocommerce email notification
-	 */
-	public function wps_hide_login_redirect_page_email_notif_woocommerce() {
-
-		if ( ! class_exists( 'WC_Form_Handler' ) ) {
-			return false;
-		}
-
-		if ( ! empty( $_GET ) && isset( $_GET['action'] ) && 'rp' === $_GET['action'] && isset( $_GET['key'] ) && isset( $_GET['login'] ) ) {
-			wp_redirect( $this->new_login_url() );
 			exit();
 		}
 	}
