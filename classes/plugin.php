@@ -140,18 +140,13 @@ class Plugin {
 
 	public function new_login_url( $scheme = null ) {
 
-		$url = home_url( '/', $scheme );
-		if ( function_exists('icl_object_id') ) {
-			$url = site_url( '/', $scheme );
-		}
-
 		if ( get_option( 'permalink_structure' ) ) {
 
-			return $this->user_trailingslashit( $url . $this->new_login_slug() );
+			return $this->user_trailingslashit( home_url( '/', $scheme ) . $this->new_login_slug() );
 
 		} else {
 
-			return $url . '?' . $this->new_login_slug();
+			return home_url( '/', $scheme ) . '?' . $this->new_login_slug();
 
 		}
 
@@ -159,18 +154,13 @@ class Plugin {
 
 	public function new_redirect_url( $scheme = null ) {
 
-		$url = home_url( '/', $scheme );
-		if ( function_exists('icl_object_id') ) {
-			$url = site_url( '/', $scheme );
-		}
-
 		if ( get_option( 'permalink_structure' ) ) {
 
-			return $this->user_trailingslashit( $url . $this->new_redirect_slug() );
+			return $this->user_trailingslashit( home_url( '/', $scheme ) . $this->new_redirect_slug() );
 
 		} else {
 
-			return $url . '?' . $this->new_redirect_slug();
+			return home_url( '/', $scheme ) . '?' . $this->new_redirect_slug();
 
 		}
 
@@ -352,18 +342,13 @@ class Plugin {
 
 	public function whl_page_input() {
 
-		$url = home_url();
-		if ( function_exists('icl_object_id') ) {
-			$url = site_url();
-		}
-
 		if ( get_option( 'permalink_structure' ) ) {
 
-			echo '<code>' . trailingslashit( $url ) . '</code> <input id="whl_page" type="text" name="whl_page" value="' . $this->new_login_slug() . '">' . ( $this->use_trailing_slashes() ? ' <code>/</code>' : '' );
+			echo '<code>' . trailingslashit( home_url() ) . '</code> <input id="whl_page" type="text" name="whl_page" value="' . $this->new_login_slug() . '">' . ( $this->use_trailing_slashes() ? ' <code>/</code>' : '' );
 
 		} else {
 
-			echo '<code>' . trailingslashit( $url ) . '?</code> <input id="whl_page" type="text" name="whl_page" value="' . $this->new_login_slug() . '">';
+			echo '<code>' . trailingslashit( home_url() ) . '?</code> <input id="whl_page" type="text" name="whl_page" value="' . $this->new_login_slug() . '">';
 
 		}
 
@@ -372,19 +357,13 @@ class Plugin {
 	}
 
 	public function whl_redirect_admin_input() {
-
-		$url = home_url();
-		if ( function_exists('icl_object_id') ) {
-			$url = site_url();
-		}
-
 		if ( get_option( 'permalink_structure' ) ) {
 
-			echo '<code>' . trailingslashit( $url ) . '</code> <input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . $this->new_redirect_slug() . '">' . ( $this->use_trailing_slashes() ? ' <code>/</code>' : '' );
+			echo '<code>' . trailingslashit( home_url() ) . '</code> <input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . $this->new_redirect_slug() . '">' . ( $this->use_trailing_slashes() ? ' <code>/</code>' : '' );
 
 		} else {
 
-			echo '<code>' . trailingslashit( $url ) . '?</code> <input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . $this->new_redirect_slug() . '">';
+			echo '<code>' . trailingslashit( home_url() ) . '?</code> <input id="whl_redirect_admin" type="text" name="whl_redirect_admin" value="' . $this->new_redirect_slug() . '">';
 
 		}
 
@@ -466,7 +445,7 @@ class Plugin {
 
 			$pagenow = 'index.php';
 
-		} elseif ( ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === site_url( $this->new_login_slug(), 'relative' ) )
+		} elseif ( ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === home_url( $this->new_login_slug(), 'relative' ) )
 		           || ( ! get_option( 'permalink_structure' )
 		                && isset( $_GET[ $this->new_login_slug() ] )
 		                && empty( $_GET[ $this->new_login_slug() ] ) ) ) {
