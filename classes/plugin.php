@@ -140,13 +140,15 @@ class Plugin {
 
 	public function new_login_url( $scheme = null ) {
 
+		$url = apply_filters( 'wps_hide_login_home_url', home_url( '/', $scheme ) );
+
 		if ( get_option( 'permalink_structure' ) ) {
 
-			return $this->user_trailingslashit( home_url( '/', $scheme ) . $this->new_login_slug() );
+			return $this->user_trailingslashit( $url . $this->new_login_slug() );
 
 		} else {
 
-			return home_url( '/', $scheme ) . '?' . $this->new_login_slug();
+			return $url . '?' . $this->new_login_slug();
 
 		}
 
