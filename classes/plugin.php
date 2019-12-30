@@ -528,9 +528,20 @@ class Plugin {
 			} elseif ( $pagenow === 'wp-login.php' ) {
 				global $error, $interim_login, $action, $user_login;
 
-				if ( is_user_logged_in() && ! isset( $_REQUEST['action'] ) ) {
-					wp_safe_redirect( admin_url() );
-					die();
+				$redirect_to = admin_url();
+
+				$requested_redirect_to = '';
+				if ( isset( $_REQUEST['redirect_to'] ) ) {
+					$requested_redirect_to = $_REQUEST['redirect_to'];
+				}
+
+				if ( is_user_logged_in() ) {
+					$user = wp_get_current_user();
+					if ( ! isset( $_REQUEST['action'] ) ) {
+						$logged_in_redirect = apply_filters( 'whl_logged_in_redirect', $redirect_to, $requested_redirect_to, $user );
+						wp_safe_redirect( $logged_in_redirect );
+						die();
+					}
 				}
 
 				@require_once ABSPATH . 'wp-login.php';
