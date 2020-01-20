@@ -148,6 +148,7 @@ La première étape consiste à vérifier votre fichier .htaccess et à le compa
 
 = 1.5.5 =
 * Add filter to redirect in cases where the user is already logged in.
+* Fix : add rawurldecode for all $_SERVER['REQUEST_URI']
 
 = 1.5.4.2 =
 * Revert to code in tag 1.5.3

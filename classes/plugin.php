@@ -428,14 +428,14 @@ class Plugin {
 		global $pagenow;
 
 		if ( ! is_multisite()
-		     && ( strpos( $_SERVER['REQUEST_URI'], 'wp-signup' ) !== false
-		          || strpos( $_SERVER['REQUEST_URI'], 'wp-activate' ) !== false ) && apply_filters( 'wps_hide_login_signup_enable', false ) === false ) {
+		     && ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ) , 'wp-signup' ) !== false
+		          || strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-activate' ) !== false ) && apply_filters( 'wps_hide_login_signup_enable', false ) === false ) {
 
 			wp_die( __( 'This feature is not enabled.', 'wpserveur-hide-login' ) );
 
 		}
 
-		$request = parse_url( $_SERVER['REQUEST_URI'] );
+		$request = parse_url( rawurldecode( $_SERVER['REQUEST_URI'] ) );
 
 		if ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-login.php' ) !== false
 		       || ( isset( $request['path'] ) && untrailingslashit( $request['path'] ) === site_url( 'wp-login', 'relative' ) ) )
@@ -479,7 +479,7 @@ class Plugin {
 
 		global $pagenow;
 
-		$request = parse_url( $_SERVER['REQUEST_URI'] );
+		$request = parse_url( rawurldecode( $_SERVER['REQUEST_URI'] ) );
 
 		if ( ! isset( $_POST['post_password'] ) ) {
 
