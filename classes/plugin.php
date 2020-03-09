@@ -216,12 +216,14 @@ class Plugin {
 			     && ! in_array( $whl_page, $this->forbidden_slugs() ) ) {
 
 				update_site_option( 'whl_page', $whl_page );
+				flush_rewrite_rules();
 
 			}
 			if ( ( $whl_redirect_admin = sanitize_title_with_dashes( $_POST['whl_redirect_admin'] ) )
 			     && strpos( $whl_redirect_admin, '404' ) === false ) {
 
 				update_site_option( 'whl_redirect_admin', $whl_redirect_admin );
+				flush_rewrite_rules();
 
 			}
 		}

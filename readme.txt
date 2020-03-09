@@ -147,6 +147,7 @@ La première étape consiste à vérifier votre fichier .htaccess et à le compa
 == Changelog ==
 
 = 1.5.6 =
+* Fix : flush rewrite rules after install or update option
 * Tested up to 5.4
 
 = 1.5.5 =
