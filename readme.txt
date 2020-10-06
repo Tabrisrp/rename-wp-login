@@ -33,7 +33,7 @@ This plugin is only maintained, which means we do not guarantee free support. Co
 
 Ce plugin vous est gentiment proposé par <a href="https://www.wpserveur.net/?refwps=14&campaign=wpshidelogin" target="_blank">WPServeur</a> l'hébergeur spécialisé WordPress.
 
-Plus d'infos sur son utilisation : https://wpformation.com/wps-hide-login-url-connexion-wordpress/
+Plus d'infos sur son utilisation : <a href="https://wpformation.com/wps-hide-login-url-connexion-wordpress/" target="_blank">https://wpformation.com/wps-hide-login-url-connexion-wordpress/</a>
 
 Découvrez également nos autres extensions gratuites :
 - <a href="https://fr.wordpress.org/plugins/wps-limit-login/" target="_blank">WPS Limit Login</a> pour bloquer les attaques par force brute.
