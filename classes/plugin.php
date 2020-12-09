@@ -78,6 +78,14 @@ class Plugin {
 		add_filter( 'login_url', array( $this, 'login_url' ), 10, 3 );
 
 		add_filter( 'user_request_action_email_content', array( $this, 'user_request_action_email_content' ), 999, 2 );
+
+		add_filter( 'site_status_tests', array( $this, 'site_status_tests' ) );
+	}
+
+	public function site_status_tests( $tests ) {
+		unset( $tests['async']['loopback_requests'] );
+
+		return $tests;
 	}
 
 	public function user_request_action_email_content( $email_text, $email_data ) {
@@ -430,7 +438,7 @@ class Plugin {
 		global $pagenow;
 
 		if ( ! is_multisite()
-		     && ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ) , 'wp-signup' ) !== false
+		     && ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-signup' ) !== false
 		          || strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-activate' ) !== false ) && apply_filters( 'wps_hide_login_signup_enable', false ) === false ) {
 
 			wp_die( __( 'This feature is not enabled.', 'wps-hide-login' ) );
