@@ -55,6 +55,10 @@ class Plugin {
 			) );
 		}
 
+		if ( is_multisite() ) {
+			add_action( 'wp_before_admin_bar_render', array( $this, 'modify_mysites_menu' ), 999 );
+		}
+
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ), 9999 );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
@@ -126,13 +130,43 @@ class Plugin {
 
 	}
 
-	private function new_login_slug() {
-		if ( $slug = get_option( 'whl_page' ) ) {
-			return $slug;
-		} else if ( ( is_multisite() && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) && ( $slug = get_site_option( 'whl_page', 'login' ) ) ) ) {
-			return $slug;
-		} else if ( $slug = 'login' ) {
-			return $slug;
+	public function modify_mysites_menu() {
+		global $wp_admin_bar;
+
+		$all_toolbar_nodes = $wp_admin_bar->get_nodes();
+
+		foreach ( $all_toolbar_nodes as $node ) {
+			if ( preg_match( '/^blog-(\d+)(.*)/', $node->id, $matches ) ) {
+				$blog_id = $matches[1];
+				if ( $login_slug = $this->new_login_slug( $blog_id ) ) {
+					if ( ! $matches[2] || '-d' === $matches[2] ) {
+						$args       = $node;
+						$old_href   = $args->href;
+						$args->href = preg_replace( '/wp-admin\/$/', "$login_slug/", $old_href );
+						if ( $old_href !== $arg->href ) {
+							$wp_admin_bar->add_node( $args );
+						}
+					} elseif ( strpos( $node->href, '/wp-admin/' ) !== false ) {
+						$wp_admin_bar->remove_node( $node->id );
+					}
+				}
+			}
+		}
+	}
+
+	private function new_login_slug( $blog_id = '' ) {
+		if ( $blog_id ) {
+			if ( $slug = get_blog_option( $blog_id, 'whl_page' ) ) {
+				return $slug;
+			}
+		} else {
+			if ( $slug = get_option( 'whl_page' ) ) {
+				return $slug;
+			} else if ( ( is_multisite() && is_plugin_active_for_network( WPS_HIDE_LOGIN_BASENAME ) && ( $slug = get_site_option( 'whl_page', 'login' ) ) ) ) {
+				return $slug;
+			} else if ( $slug = 'login' ) {
+				return $slug;
+			}
 		}
 	}
 
