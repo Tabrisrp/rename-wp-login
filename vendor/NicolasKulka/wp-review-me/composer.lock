@@ -1,24 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "0d1622f036a475e98f58e5527abcf7e0",
-    "content-hash": "5db72a2a7c0fc85ea28316b1b3a30f5d",
+    "content-hash": "ac2eee6cd5bf817c5950e2b3f54f2cee",
     "packages": [
         {
-            "name": "julien731/wp-dismissible-notices-handler",
-            "version": "1.0.0",
+            "name": "nicolaskulka/wp-dismissible-notices-handler",
+            "version": "2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/julien731/WP-Dismissible-Notices-Handler.git",
-                "reference": "85ce1debbdfd4543e5b835dfe6670b9de99ddf6b"
+                "url": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler.git",
+                "reference": "7257ae7f245aedbd3cba6e0f5a7d8bdd49210f4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/julien731/WP-Dismissible-Notices-Handler/zipball/85ce1debbdfd4543e5b835dfe6670b9de99ddf6b",
-                "reference": "85ce1debbdfd4543e5b835dfe6670b9de99ddf6b",
+                "url": "https://api.github.com/repos/NicolasKulka/WP-Dismissible-Notices-Handler/zipball/7257ae7f245aedbd3cba6e0f5a7d8bdd49210f4a",
+                "reference": "7257ae7f245aedbd3cba6e0f5a7d8bdd49210f4a",
                 "shasum": ""
             },
             "require": {
@@ -27,24 +26,25 @@
             "type": "library",
             "autoload": {
                 "files": [
-                    "handler.php"
+                    "handler.php",
+                    "includes/helper-functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GNU GPL"
             ],
             "authors": [
                 {
-                    "name": "Julien Liabeuf",
-                    "email": "julien@liabeuf.fr",
-                    "homepage": "https://julienliabeuf.com",
+                    "name": "Nicolas KULKA",
                     "role": "Lead Developer"
                 }
             ],
             "description": "A simple library to handle Ajax-dismissible admin notices for WordPress",
-            "homepage": "https://github.com/julien731/WP-Dismissible-Notices-Handler",
-            "time": "2016-04-03 05:12:27"
+            "homepage": "https://github.com/nicolaskulka/WP-Dismissible-Notices-Handler",
+            "support": {
+                "source": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler/tree/2.2"
+            },
+            "time": "2021-02-15T08:45:53+00:00"
         }
     ],
     "packages-dev": [],
@@ -56,5 +56,6 @@
     "platform": {
         "php": ">=5.5.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

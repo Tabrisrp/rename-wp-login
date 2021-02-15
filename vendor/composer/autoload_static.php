@@ -9,7 +9,7 @@ class ComposerStaticInitaaeeb2759878cb59c7a1ebca78d83d93
     public static $files = array (
         '75114bb77681cceeacec8e9fdc25fe5f' => __DIR__ . '/..' . '/nicolaskulka/wp-dismissible-notices-handler/handler.php',
         '02e78d03a068280c2da71f3d013fe5e3' => __DIR__ . '/..' . '/nicolaskulka/wp-dismissible-notices-handler/includes/helper-functions.php',
-        '642f204a71b38c9724089b10b2126d4f' => __DIR__ . '/..' . '/NicolasKulka/wp-review-me/review.php',
+        '642f204a71b38c9724089b10b2126d4f' => __DIR__ . '/..' . '/nicolaskulka/wp-review-me/review.php',
     );
 
     public static $classMap = array (

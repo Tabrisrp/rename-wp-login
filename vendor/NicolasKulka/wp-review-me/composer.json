@@ -1,5 +1,5 @@
 {
-  "name": "NicolasKulka/wp-review-me",
+  "name": "nicolaskulka/wp-review-me",
   "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
   "homepage": "https://github.com/julien731/WP-Review-Me",
   "license": "GNU GPL",
@@ -19,7 +19,7 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "NicolasKulka/wp-dismissible-notices-handler": "2.*"
+    "nicolaskulka/wp-dismissible-notices-handler": "2.*"
   },
   "autoload": {
     "files": ["review.php"]
