@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '060859bbb63c73b234850531410bb9bd092ab512',
+    'reference' => 'd30cd888623c17a2e0f3d66bf5be025eeb7dd374',
     'name' => 'wpserveur/wps-hide-login',
   ),
   'versions' => 
@@ -59,7 +59,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '060859bbb63c73b234850531410bb9bd092ab512',
+      'reference' => 'd30cd888623c17a2e0f3d66bf5be025eeb7dd374',
     ),
   ),
 );

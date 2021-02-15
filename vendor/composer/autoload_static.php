@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitaaeeb2759878cb59c7a1ebca78d83d93
+class ComposerStaticInit393b2abbc4f40fa5ed9a0e7160b5b801
 {
     public static $files = array (
         '75114bb77681cceeacec8e9fdc25fe5f' => __DIR__ . '/..' . '/nicolaskulka/wp-dismissible-notices-handler/handler.php',
@@ -19,7 +19,7 @@ class ComposerStaticInitaaeeb2759878cb59c7a1ebca78d83d93
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitaaeeb2759878cb59c7a1ebca78d83d93::$classMap;
+            $loader->classMap = ComposerStaticInit393b2abbc4f40fa5ed9a0e7160b5b801::$classMap;
 
         }, null, ClassLoader::class);
     }
