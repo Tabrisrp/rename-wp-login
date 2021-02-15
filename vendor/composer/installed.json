@@ -1,89 +1,94 @@
-[
-    {
-        "name": "NicolasKulka/wp-dismissible-notices-handler",
-        "version": "2.0",
-        "version_normalized": "2.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler.git",
-            "reference": "4c3ffe7d98b13379476ebbec7e88650d37ce2dcf"
+{
+    "packages": [
+        {
+            "name": "NicolasKulka/wp-review-me",
+            "version": "2.6",
+            "version_normalized": "2.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NicolasKulka/WP-Review-Me.git",
+                "reference": "80e0bd652c87d226c3ac3e0bc0f731f2d6cd8214"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/80e0bd652c87d226c3ac3e0bc0f731f2d6cd8214",
+                "reference": "80e0bd652c87d226c3ac3e0bc0f731f2d6cd8214",
+                "shasum": ""
+            },
+            "require": {
+                "nicolaskulka/wp-dismissible-notices-handler": "2.*",
+                "php": ">=5.5.0"
+            },
+            "time": "2021-02-15T08:30:31+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "review.php"
+                ]
+            },
+            "license": [
+                "GNU GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Liabeuf",
+                    "email": "julien@liabeuf.fr",
+                    "homepage": "https://julienliabeuf.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
+            "homepage": "https://github.com/julien731/WP-Review-Me",
+            "support": {
+                "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.6"
+            },
+            "install-path": "../NicolasKulka/wp-review-me"
         },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/NicolasKulka/WP-Dismissible-Notices-Handler/zipball/4c3ffe7d98b13379476ebbec7e88650d37ce2dcf",
-            "reference": "4c3ffe7d98b13379476ebbec7e88650d37ce2dcf",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5.0"
-        },
-        "time": "2018-07-17T12:19:22+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "handler.php"
-            ]
-        },
-        "license": [
-            "GNU GPL"
-        ],
-        "authors": [
-            {
-                "name": "Julien Liabeuf",
-                "email": "julien@liabeuf.fr",
-                "homepage": "https://julienliabeuf.com",
-                "role": "Lead Developer"
-            }
-        ],
-        "description": "A simple library to handle Ajax-dismissible admin notices for WordPress",
-        "homepage": "https://github.com/julien731/WP-Dismissible-Notices-Handler",
-        "support": {
-            "source": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler/tree/2.0"
+        {
+            "name": "nicolaskulka/wp-dismissible-notices-handler",
+            "version": "2.1",
+            "version_normalized": "2.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler.git",
+                "reference": "a7cb98c12161867b9c5160d28204a5266b8d8814"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NicolasKulka/WP-Dismissible-Notices-Handler/zipball/a7cb98c12161867b9c5160d28204a5266b8d8814",
+                "reference": "a7cb98c12161867b9c5160d28204a5266b8d8814",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "time": "2021-02-15T08:22:57+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "handler.php",
+                    "includes/helper-functions.php"
+                ]
+            },
+            "license": [
+                "GNU GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas KULKA",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A simple library to handle Ajax-dismissible admin notices for WordPress",
+            "homepage": "https://github.com/nicolaskulka/WP-Dismissible-Notices-Handler",
+            "support": {
+                "source": "https://github.com/NicolasKulka/WP-Dismissible-Notices-Handler/tree/2.1"
+            },
+            "install-path": "../nicolaskulka/wp-dismissible-notices-handler"
         }
-    },
-    {
-        "name": "NicolasKulka/wp-review-me",
-        "version": "2.5",
-        "version_normalized": "2.5.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/NicolasKulka/WP-Review-Me.git",
-            "reference": "9ad656a84c4878b6dd4d9c2964e262f76b0c3c88"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/9ad656a84c4878b6dd4d9c2964e262f76b0c3c88",
-            "reference": "9ad656a84c4878b6dd4d9c2964e262f76b0c3c88",
-            "shasum": ""
-        },
-        "require": {
-            "nicolaskulka/wp-dismissible-notices-handler": "2.0",
-            "php": ">=5.5.0"
-        },
-        "time": "2018-07-17T12:31:36+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "review.php"
-            ]
-        },
-        "license": [
-            "GNU GPL"
-        ],
-        "authors": [
-            {
-                "name": "Julien Liabeuf",
-                "email": "julien@liabeuf.fr",
-                "homepage": "https://julienliabeuf.com",
-                "role": "Lead Developer"
-            }
-        ],
-        "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
-        "homepage": "https://github.com/julien731/WP-Review-Me",
-        "support": {
-            "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/master"
-        }
-    }
-]
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

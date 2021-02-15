@@ -19,7 +19,7 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "NicolasKulka/wp-dismissible-notices-handler": "2.0"
+    "NicolasKulka/wp-dismissible-notices-handler": "2.*"
   },
   "autoload": {
     "files": ["review.php"]

@@ -13,16 +13,11 @@
  *
  * @package   Dismissible Notices Handler
  * @author    Julien Liabeuf <julien@liabeuf.fr>
- * @version   1.1
+ * @version   1.2.0
  * @license   GPL-2.0+
  * @link      https://julienliabeuf.com
  * @copyright 2018 Julien Liabeuf
  */
-
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
 
 if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 
@@ -40,7 +35,7 @@ if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $version = '1.1';
+		public $version = '1.2.1';
 
 		/**
 		 * Required version of PHP.
@@ -56,7 +51,7 @@ if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		public $wordpress_version_required = '4.2';
+		public $wordpress_version_required = '4.7';
 
 		/**
 		 * @var array Holds all our registered notices
@@ -91,29 +86,29 @@ if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 
 			// Make sure WordPress is compatible
 			if ( ! self::$instance->is_wp_compatible() ) {
-				/*self::$instance->spit_error(
+				self::$instance->spit_error(
 					sprintf(
+						/* translators: %s: required wordpress version */
 						esc_html__( 'The library can not be used because your version of WordPress is too old. You need version %s at least.', 'wp-dismissible-notices-handler' ),
 						self::$instance->wordpress_version_required
 					)
-				);*/
+				);
 
 				return;
 			}
 
 			// Make sure PHP is compatible
 			if ( ! self::$instance->is_php_compatible() ) {
-				/*self::$instance->spit_error(
+				self::$instance->spit_error(
 					sprintf(
+						/* translators: %s: required php version */
 						esc_html__( 'The library can not be used because your version of PHP is too old. You need version %s at least.', 'wp-dismissible-notices-handler' ),
 						self::$instance->php_version_required
 					)
-				);*/
+				);
 
 				return;
 			}
-
-			self::$instance->includes();
 
 			add_action( 'admin_notices', array( self::$instance, 'display' ) );
 			add_action( 'admin_print_scripts', array( self::$instance, 'load_script' ) );
@@ -151,16 +146,6 @@ if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 
 			return true;
 
-		}
-
-		/**
-		 * Include all our files
-		 *
-		 * @since 1.0
-		 * @return void
-		 */
-		private function includes() {
-			require( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'includes/helper-functions.php' );
 		}
 
 		/**
@@ -615,23 +600,5 @@ if ( ! class_exists( 'Dismissible_Notices_Handler' ) ) {
 		}
 
 	}
-
-	/**
-	 * The main function responsible for returning the unique Dismissible Notices Handler instance
-	 *
-	 * Use this function like you would a global variable, except without needing
-	 * to declare the global.
-	 *
-	 * @since 1.0
-	 * @return object Dismissible_Notices_Handler
-	 */
-	function DNH() {
-		return Dismissible_Notices_Handler::instance();
-	}
-
-	/**
-	 * Get the library running
-	 */
-	DNH();
 
 }

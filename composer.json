@@ -32,6 +32,6 @@
   ],
   "require":{
     "php":">=5.6.0",
-    "NicolasKulka/wp-review-me":"2.5"
+    "nicolaskulka/wp-review-me":"2.6"
   }
 }
