@@ -6,7 +6,7 @@ Tags: rename, login, wp-login, wp-login.php, custom login url, jetpack, wpserveu
 Requires at least: 4.1
 Tested up to: 5.6
 Requires PHP: 7.0
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -147,6 +147,9 @@ Ce cas peut provenir de plugins modifiant vos fichiers .htaccess pour ajouter ou
 La première étape consiste à vérifier votre fichier .htaccess et à le comparer à un fichier .htaccess normal, pour voir si le problème provient de ce fichier.
 
 == Changelog ==
+
+= 1.8.2 =
+* Fix notice "Notice: Trying to get property 'href' of non-object"
 
 = 1.8.1 =
 * Fix fatal error with vendor wp-dismissible-notices-handler and wp-review-me

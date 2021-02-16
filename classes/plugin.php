@@ -143,7 +143,7 @@ class Plugin {
 						$args       = $node;
 						$old_href   = $args->href;
 						$args->href = preg_replace( '/wp-admin\/$/', "$login_slug/", $old_href );
-						if ( $old_href !== $arg->href ) {
+						if ( $old_href !== $args->href ) {
 							$wp_admin_bar->add_node( $args );
 						}
 					} elseif ( strpos( $node->href, '/wp-admin/' ) !== false ) {
