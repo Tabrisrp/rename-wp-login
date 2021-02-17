@@ -4,14 +4,8 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit393b2abbc4f40fa5ed9a0e7160b5b801
+class ComposerStaticInit61bdb0bca1f1b58fe7a242db89796976
 {
-    public static $files = array (
-        '75114bb77681cceeacec8e9fdc25fe5f' => __DIR__ . '/..' . '/nicolaskulka/wp-dismissible-notices-handler/handler.php',
-        '02e78d03a068280c2da71f3d013fe5e3' => __DIR__ . '/..' . '/nicolaskulka/wp-dismissible-notices-handler/includes/helper-functions.php',
-        '642f204a71b38c9724089b10b2126d4f' => __DIR__ . '/..' . '/nicolaskulka/wp-review-me/review.php',
-    );
-
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -19,7 +13,7 @@ class ComposerStaticInit393b2abbc4f40fa5ed9a0e7160b5b801
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit393b2abbc4f40fa5ed9a0e7160b5b801::$classMap;
+            $loader->classMap = ComposerStaticInit61bdb0bca1f1b58fe7a242db89796976::$classMap;
 
         }, null, ClassLoader::class);
     }
