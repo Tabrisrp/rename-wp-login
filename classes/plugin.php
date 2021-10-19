@@ -533,7 +533,7 @@ class Plugin {
 				die();
 			}
 
-			if ( ! is_user_logged_in() && isset( $_GET['wc-ajax'] ) ) {
+			if ( ! is_user_logged_in() && isset( $_GET['wc-ajax'] ) && $pagenow === 'profile.php' ) {
 				wp_safe_redirect( $this->new_redirect_url() );
 				die();
 			}
