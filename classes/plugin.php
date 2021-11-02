@@ -538,6 +538,11 @@ class Plugin {
 				die();
 			}
 
+			if ( ! is_user_logged_in() && $request['path'] === '/wp-admin/options.php' ) {
+				header('Location: ' . $this->new_redirect_url() );
+				die;
+			}
+
 			if ( $pagenow === 'wp-login.php'
 			     && $request['path'] !== $this->user_trailingslashit( $request['path'] )
 			     && get_option( 'permalink_structure' ) ) {
