@@ -540,15 +540,12 @@ class Plugin {
 				die();
 			}
 
-			if ( ! is_user_logged_in() && $request['path'] === '/wp-admin/options.php' ) {
+			if ( ! is_user_logged_in() && isset( $request['path'] ) && $request['path'] === '/wp-admin/options.php' ) {
 				header('Location: ' . $this->new_redirect_url() );
 				die;
 			}
 
-			if ( $pagenow === 'wp-login.php'
-			     && $request['path'] !== $this->user_trailingslashit( $request['path'] )
-			     && get_option( 'permalink_structure' ) ) {
-
+			if ( $pagenow === 'wp-login.php' && isset( $request['path'] ) && $request['path'] !== $this->user_trailingslashit( $request['path'] ) && get_option( 'permalink_structure' ) ) {
 				wp_safe_redirect( $this->user_trailingslashit( $this->new_login_url() )
 				                  . ( ! empty( $_SERVER['QUERY_STRING'] ) ? '?' . $_SERVER['QUERY_STRING'] : '' ) );
 
