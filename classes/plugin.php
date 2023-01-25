@@ -497,6 +497,8 @@ class Plugin {
 		                && isset( $_GET[ $this->new_login_slug() ] )
 		                && empty( $_GET[ $this->new_login_slug() ] ) ) ) {
 
+			$_SERVER['SCRIPT_NAME'] = $this->new_login_slug();
+
 			$pagenow = 'wp-login.php';
 
 		} elseif ( ( strpos( rawurldecode( $_SERVER['REQUEST_URI'] ), 'wp-register.php' ) !== false
