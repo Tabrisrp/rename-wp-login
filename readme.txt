@@ -62,8 +62,6 @@ Works with multisite, with subdomains and subfolders. Activating it for a networ
 
 If you’re using a **page caching plugin** other than WP Rocket, you should add the slug of the new login url to the list of pages not to cache. WP Rocket is already fully compatible with the plugin.
 
-For W3 Total Cache and WP Super Cache this plugin will give you a message with a link to the field you should update.
-
 = Français =
 
 Nécessite WordPress 4.1 ou supérieur. Toutes les choses liées à la connexion telles que le formulaire d'inscription, le formulaire de mot de passe perdu, le widget de connexion et les sessions expirées continuent de fonctionner.
@@ -81,12 +79,6 @@ Il est également compatible avec tout plugin qui se connecte au formulaire de c
 Fonctionne en multisite, avec sous-domaines ou sous dossiers. L'activer pour un réseau vous permet de définir une valeur par défaut pour l'ensemble du réseau. Les sites individuels peuvent toujours renommer leur page de connexion pour autre chose.
 
 Si vous utilisez un **plugin de mise en cache de pages** autre que WP Rocket, vous devez ajouter le slug de la nouvelle URL de connexion à la liste des pages à ne pas mettre en cache. WP Rocket est déjà entièrement compatible avec le plugin.
-
-Pour W3 Total Cache et WP Super Cache, ce plugin vous donnera un message avec un lien vers le champ que vous devriez mettre à jour.
-
-= GitHub =
-
-https://github.com/tabrisrp/wps-hide-login
 
 == Installation ==
 
