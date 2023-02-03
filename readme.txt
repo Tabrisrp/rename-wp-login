@@ -1,7 +1,7 @@
 === WPS Hide Login ===
 
 Contributors: WPServeur, NicolasKulka, wpformation
-Donate link : https://www.paypal.me/donateWPServeur
+Donate link : https://www.paypal.me/donateKulkaNicolas
 Tags: rename, login, wp-login, wp-login.php, custom login url, jetpack, wpserveur
 Requires at least: 4.1
 Tested up to: 6.1
