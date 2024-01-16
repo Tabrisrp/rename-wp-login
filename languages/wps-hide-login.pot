@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-16T10:31:32+00:00\n"
+"POT-Creation-Date: 2024-01-16T10:41:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: wps-hide-login\n"
@@ -124,7 +124,7 @@ msgid "This has been disabled"
 msgstr ""
 
 #: classes/plugin.php:756
-msgid "WPS Hide Login : Please note, if you check the comment_registration option ‘Users must be registered and logged in to comment’, the login link will not be hidden on the comment block."
+msgid "WPS Hide Login : Please note, if you check the comment_registration option \"Users must be registered and logged in to comment\", the login link will not be hidden on the comment block."
 msgstr ""
 
 #: classes/plugin.php:767

@@ -753,7 +753,7 @@ class Plugin {
 		// Vérifie si la page actuelle est options-discussion.php
 		if ( $current_screen && $current_screen->id === 'options-discussion' ) : ?>
             <div class="notice notice-warning is-dismissible">
-                <p><?php _e( 'WPS Hide Login : Please note, if you check the comment_registration option ‘Users must be registered and logged in to comment’, the login link will not be hidden on the comment block.', 'wps-hide-login' ); ?></p>
+                <p><?php _e( 'WPS Hide Login : Please note, if you check the comment_registration option "Users must be registered and logged in to comment", the login link will not be hidden on the comment block.', 'wps-hide-login' ); ?></p>
             </div>
 		<?php
 		endif;
