@@ -84,6 +84,9 @@ class Plugin {
 		add_filter( 'user_request_action_email_content', array( $this, 'user_request_action_email_content' ), 999, 2 );
 
 		add_filter( 'site_status_tests', array( $this, 'site_status_tests' ) );
+
+		add_action( 'admin_notices', array( $this, 'warning_options_discussion' ) );
+		add_action( 'admin_notices', array( $this, 'warning_notice_for_comment_registration' ) );
 	}
 
 	public function site_status_tests( $tests ) {
@@ -523,7 +526,6 @@ class Plugin {
 	}
 
 	public function wp_loaded() {
-
 		global $pagenow;
 
 		$request = parse_url( rawurldecode( $_SERVER['REQUEST_URI'] ) );
@@ -543,7 +545,7 @@ class Plugin {
 			}
 
 			if ( ! is_user_logged_in() && isset( $request['path'] ) && $request['path'] === '/wp-admin/options.php' ) {
-				header('Location: ' . $this->new_redirect_url() );
+				header( 'Location: ' . $this->new_redirect_url() );
 				die;
 			}
 
@@ -611,39 +613,36 @@ class Plugin {
 	}
 
 	public function site_url( $url, $path, $scheme, $blog_id ) {
-
 		return $this->filter_wp_login_php( $url, $scheme );
-
 	}
 
 	public function network_site_url( $url, $path, $scheme ) {
-
 		return $this->filter_wp_login_php( $url, $scheme );
-
 	}
 
 	public function wp_redirect( $location, $status ) {
-
 		if ( strpos( $location, 'https://wordpress.com/wp-login.php' ) !== false ) {
 			return $location;
 		}
 
 		return $this->filter_wp_login_php( $location );
-
 	}
 
 	public function filter_wp_login_php( $url, $scheme = null ) {
+		global $pagenow;
 
 		if ( strpos( $url, 'wp-login.php?action=postpass' ) !== false ) {
+			return $url;
+		}
+
+		if ( is_multisite() && 'install.php' === $pagenow ) {
 			return $url;
 		}
 
 		if ( strpos( $url, 'wp-login.php' ) !== false && strpos( wp_get_referer(), 'wp-login.php' ) === false ) {
 
 			if ( is_ssl() ) {
-
 				$scheme = 'https';
-
 			}
 
 			$args = explode( '?', $url );
@@ -667,13 +666,10 @@ class Plugin {
 		}
 
 		return $url;
-
 	}
 
 	public function welcome_email( $value ) {
-
 		return $value = str_replace( 'wp-login.php', trailingslashit( get_site_option( 'whl_page', 'login' ) ), $value );
-
 	}
 
 	public function forbidden_slugs() {
@@ -751,4 +747,26 @@ class Plugin {
 		return $login_url;
 	}
 
+	public function warning_options_discussion() {
+		$current_screen = get_current_screen();
+
+		// Vérifie si la page actuelle est options-discussion.php
+		if ( $current_screen && $current_screen->id === 'options-discussion' ) : ?>
+            <div class="notice notice-warning is-dismissible">
+                <p><?php _e( 'WPS Hide Login : Please note, if you check the comment_registration option ‘Users must be registered and logged in to comment’, the login link will not be hidden on the comment block.', 'wps-hide-login' ); ?></p>
+            </div>
+		<?php
+		endif;
+	}
+
+	public function warning_notice_for_comment_registration() {
+		$comment_registration_option = get_option( 'comment_registration' );
+
+		if ( $comment_registration_option == '1' ) : ?>
+            <div class="notice notice-warning is-dismissible">
+                <p><?php _e( 'WPS Hide Login : Please note that the comment_registration option “Users must be registered and logged in to comment” is activated on your site, the connection link will not be hidden on the comments block.', 'wps-hide-login' ); ?></p>
+            </div>
+		<?php
+		endif;
+	}
 }
