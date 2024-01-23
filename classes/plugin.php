@@ -87,7 +87,7 @@ class Plugin {
 
 		add_action( 'wp_ajax_dismiss_admin_notice', array( $this, 'dismiss_admin_notice' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts_notifs' ) );
-		add_action( 'admin_notices', array( $this, 'warning_options_discussion' ) );
+		//add_action( 'admin_notices', array( $this, 'warning_options_discussion' ) );
 		add_action( 'admin_notices', array( $this, 'warning_notice_for_comment_registration' ) );
 	}
 
