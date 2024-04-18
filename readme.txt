@@ -140,6 +140,9 @@ La première étape consiste à vérifier votre fichier .htaccess et à le compa
 
 == Changelog ==
 
+= 1.9.15.1 =
+* Revert fix
+
 = 1.9.15 =
 * Fix vulnerability (Thanks @petitphp) : Login Page Disclosure
 

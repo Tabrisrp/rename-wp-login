@@ -641,9 +641,9 @@ class Plugin {
 			return $url;
 		}
 
-		if ( strpos( $url, 'wp-admin/?action=postpass' ) === false ) {
+		/*if ( strpos( $url, 'wp-admin/?action=postpass' ) === false ) {
 			return $url;
-		}
+		}*/
 
 		if ( strpos( $url, 'wp-login.php' ) !== false && strpos( wp_get_referer(), 'wp-login.php' ) === false ) {
 
