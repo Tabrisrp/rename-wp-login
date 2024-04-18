@@ -641,6 +641,10 @@ class Plugin {
 			return $url;
 		}
 
+		if ( strpos( $url, 'wp-admin/?action=postpass' ) === false ) {
+			return $url;
+		}
+
 		if ( strpos( $url, 'wp-login.php' ) !== false && strpos( wp_get_referer(), 'wp-login.php' ) === false ) {
 
 			if ( is_ssl() ) {
@@ -809,11 +813,11 @@ class Plugin {
 					)
 				);
 			else :*/ ?>
-                <div class="wps-updates notice notice-warning is-dismissible"
-                     data-dismissible="disable-notice-warning-comments-forever">
-                    <p><?php _e( 'WPS Hide Login : Please note, if you check the comment_registration option "Users must be registered and logged in to comment", the login link will not be hidden on the comment block.', 'wps-hide-login' ); ?></p>
-                </div>
-			    <?php
+            <div class="wps-updates notice notice-warning is-dismissible"
+                 data-dismissible="disable-notice-warning-comments-forever">
+                <p><?php _e( 'WPS Hide Login : Please note, if you check the comment_registration option "Users must be registered and logged in to comment", the login link will not be hidden on the comment block.', 'wps-hide-login' ); ?></p>
+            </div>
+		<?php
 			//endif;
 		endif;
 	}
@@ -836,12 +840,12 @@ class Plugin {
 					)
 				);
 			else :*/ ?>
-                <div class="wps-updates notice notice-warning is-dismissible"
-                     data-dismissible="disable-notice-warning-comment-registration-forever">
-                    <p><?php _e( 'WPS Hide Login : Please note that the comment_registration option “Users must be registered and logged in to comment” is activated on your site, the connection link will not be hidden on the comments block.', 'wps-hide-login' ); ?></p>
-                </div>
-                <?php
-            //endif;
+            <div class="wps-updates notice notice-warning is-dismissible"
+                 data-dismissible="disable-notice-warning-comment-registration-forever">
+                <p><?php _e( 'WPS Hide Login : Please note that the comment_registration option “Users must be registered and logged in to comment” is activated on your site, the connection link will not be hidden on the comments block.', 'wps-hide-login' ); ?></p>
+            </div>
+		<?php
+			//endif;
 		endif;
 	}
 
